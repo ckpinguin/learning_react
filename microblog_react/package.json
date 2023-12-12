@@ -1,0 +1,50 @@
+{
+  "name": "microblog",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "history": "^4.6.1",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "md5": "^2.2.1",
+    "react": "^15.5.3",
+    "react-bootstrap": "^0.30.8",
+    "react-dom": "^15.5.3",
+    "react-redux": "^5.0.4",
+    "react-redux-toastr": "^6.2.7",
+    "react-router-dom": "^4.1.1",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-form": "^6.6.3",
+    "redux-promise-middleware": "^4.3.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "escomplex": "^2.0.0-alpha",
+    "eslint": "^3.19.0",
+    "eslint-plugin-react": "^7.0.0",
+    "esprima": "^4.0.0",
+    "expect": "^1.20.2",
+    "npm-run-all": "^4.0.2",
+    "react-addons-perf": "^15.4.2",
+    "react-scripts": "1.0.7",
+    "rewire": "^2.5.2",
+    "serve": "^5.2.2",
+    "stylint": "^1.5.9",
+    "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "build-css": "stylus src/ -o src/ && stylus src/app -o src/app",
+    "watch-css": "npm run build-css && stylus src/app/ -o src/app/ --watch",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "npm run build-css && react-scripts build",
+    "serve:prod": "serve -s build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

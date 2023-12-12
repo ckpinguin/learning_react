@@ -1,0 +1,2141 @@
+File: src/app/modules/auth/constants.js
+-----------------------------
+with filtering:
+===============
+      1 'auth'
+      1 NAME
+Total operands (first run): 2 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/constants.js: 2 : 2
+
+
+File: src/app/modules/auth/index.js
+-----------------------------
+with filtering:
+===============
+      2 constants
+      1 './constants'
+      2 reducer
+      1 './reducer'
+      2 selectors
+      1 './selectors'
+Total operands (first run): 9 of 6 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/index.js: 6 : 9
+
+
+File: src/app/modules/auth/login/actions/actions.js
+-----------------------------
+with filtering:
+===============
+      1 './actionTypes'
+      1 cancelLogin
+      3 console
+      4 debug
+      1 '../../../../../debug'
+      3 dispatch
+      1 doLogin
+      1 doLogout
+      1 error
+      2 getState
+      1 'Goodbye'
+      4 history
+      2 '/home'
+      3 id
+      1 login
+      1 LOGIN
+      1 'login cancelled'
+      1 loginCancelled
+      1 LOGIN_CANCELLED
+      1 loginFailed
+      1 'Login failed.'
+      1 LOGIN_FAILED
+      1 'login success'
+      1 loginSuccess
+      1 LOGIN_SUCCESS
+      1 logout
+      1 LOGOUT
+      1 logoutFailed
+      1 LOGOUT_FAILED
+      1 logoutSuccess
+      1 LOGOUT_SUCCESS
+      1 md5
+      1 'md5'
+      4 name
+      2 password
+      3 payload
+      1 'react-redux-toastr'
+      1 selectors
+      1 setLoggedInUser
+      1 SET_LOGGED_IN_USER
+      5 storedUser
+     10 t
+      4 toastr
+      9 type
+      1 unsetLoggedInUser
+      1 UNSET_LOGGED_IN_USER
+      8 user
+      1 '../../user'
+      1 'user found: '
+      2 userModule
+      1 `Welcome, ${user.name}`
+      1 'You have logged in successfully.'
+      1 'You have logged out.'
+Total operands (first run): 105 of 53 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/actions/actions.js: 53 : 105
+
+
+File: src/app/modules/auth/login/actions/actionTypes.js
+-----------------------------
+with filtering:
+===============
+      1 LOGIN
+      1 'LOGIN'
+      1 'LOGIN_CANCELLED'
+      1 LOGIN_CANCELLED
+      1 'LOGIN_FAILED'
+      1 LOGIN_FAILED
+      1 'LOGIN_SUCCESS'
+      1 LOGIN_SUCCESS
+      1 LOGOUT
+      1 'LOGOUT'
+      1 'LOGOUT_FAILED'
+      1 LOGOUT_FAILED
+      1 'LOGOUT_SUCCESS'
+      1 LOGOUT_SUCCESS
+      1 'SET_LOGGED_IN_USER'
+      1 SET_LOGGED_IN_USER
+      1 'UNSET_LOGGED_IN_USER'
+      1 UNSET_LOGGED_IN_USER
+Total operands (first run): 18 of 18 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/actions/actionTypes.js: 18 : 18
+
+
+File: src/app/modules/auth/login/components/index.js
+-----------------------------
+with filtering:
+===============
+      2 LoginForm
+      2 LoginFormContainer
+      1 './login-form-container/LoginFormContainer'
+      1 './login-form/LoginForm'
+      2 LoginPage
+      1 './login-page/LoginPage'
+Total operands (first run): 9 of 6 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/index.js: 6 : 9
+
+
+File: src/app/modules/auth/login/components/login-form-container/LoginFormContainer.jsx
+-----------------------------
+with filtering:
+===============
+      1 '../..'
+      1 actions
+      1 bindActionCreators
+      2 cancelLogin
+      1 components
+      1 connect
+      2 dispatch
+      2 doLogin
+      1 form
+      1 getFormState
+      3 history
+      1 id
+      4 loggedInUser
+      5 Login
+      2 LoginForm
+      1 'LoginForm'
+      4 LoginFormContainer
+      2 mapDispatchToProps
+      2 mapStateToProps
+      1 name
+      2 null
+      1 'react'
+      1 React
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'redux'
+      1 'redux-form'
+      1 reduxForm
+      2 rest
+      2 selectors
+      4 state
+      1 undefined
+      1 validate
+      1 './validate'
+      1 withRouter
+Total operands (first run): 59 of 35 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-form-container/LoginFormContainer.jsx: 35 : 59
+
+
+File: src/app/modules/auth/login/components/login-form-container/LoginFormContainer.test.js
+-----------------------------
+with filtering:
+===============
+      3 ''
+      1 BrowserRouter
+      1 configureStore
+      1 console
+      1 createBrowserHistory
+      1 createHistory
+      1 div
+      1 'div'
+      1 document
+      2 history
+      1 'history'
+      1 id
+      1 image
+      1 LoginFormContainer
+      1 './LoginFormContainer'
+      1 newEntry
+      1 onSubmit
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      1 store
+      1 '../../../../../store/configureStore'
+      1 'TEST: submit form'
+      1 text
+      1 title
+      1 undefined
+Total operands (first run): 36 of 32 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-form-container/LoginFormContainer.test.js: 32 : 36
+
+
+File: src/app/modules/auth/login/components/login-form-container/validate.js
+-----------------------------
+with filtering:
+===============
+      4 errors
+      2 name
+      1 'Name is required'
+      2 password
+      1 'Password is required'
+      2 validate
+      3 values
+Total operands (first run): 15 of 7 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-form-container/validate.js: 7 : 15
+
+
+File: src/app/modules/auth/login/components/login-form/LoginForm.jsx
+-----------------------------
+with filtering:
+===============
+      1 "alert alert-danger error-placeholder"
+      2 "btn btn-default"
+      1 "button"
+      2 className
+      1 Component
+      3 error
+      4 errors
+      1 Field
+      3 fillForm
+      2 "form-control"
+      2 "form-group"
+      1 handleSubmit
+      2 input
+      1 invalid
+      2 label
+      1 LoginForm
+      1 './LoginForm.css'
+      1 meta
+      1 "name"
+      1 "Name"
+      1 "Name eingeben."
+      5 nextProps
+      2 onCancel
+      2 onSubmit
+      2 "password"
+      1 "Passwort"
+      1 "Passwort eingeben."
+      2 placeholder
+      1 pristine
+      4 props
+      1 'react'
+      2 React
+      1 'redux-form'
+      3 renderField
+      2 state
+      1 "submit"
+      3 submitting
+      1 "text"
+      2 touched
+      2 type
+Total operands (first run): 72 of 40 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-form/LoginForm.jsx: 40 : 72
+
+
+File: src/app/modules/auth/login/components/login-form/LoginForm.test.js
+-----------------------------
+with filtering:
+===============
+      1 '../..'
+      1 console
+      1 div
+      1 'div'
+      1 document
+      1 form
+      1 getFormState
+      1 lf
+      2 Login
+      2 LoginForm
+      1 './LoginForm'
+      1 'LoginForm'
+      1 onSubmit
+      1 'react'
+      1 React
+      1 'react-dom'
+      1 ReactDOM
+      1 'redux-form'
+      1 reduxForm
+      1 'renders without crashing'
+      1 selectors
+      2 state
+      1 'TEST: submit form'
+      1 validate
+Total operands (first run): 27 of 24 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-form/LoginForm.test.js: 24 : 27
+
+
+File: src/app/modules/auth/login/components/login-page/LoginPage.jsx
+-----------------------------
+with filtering:
+===============
+      1 '../..'
+      1 Component
+      1 components
+      1 console
+      2 debug
+      1 '../../../../../../debug'
+      1 document
+      2 Login
+      1 'Login'
+      2 LoginFormContainer
+      1 LoginPage
+      1 './LoginPage.css'
+      1 "mainContent"
+      1 props
+      1 'props: '
+      1 'react'
+      2 React
+      4 title
+      1 "title"
+Total operands (first run): 26 of 19 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-page/LoginPage.jsx: 19 : 26
+
+
+File: src/app/modules/auth/login/components/login-page/LoginPage.test.js
+-----------------------------
+with filtering:
+===============
+      1 BrowserRouter
+      1 configureStore
+      1 createBrowserHistory
+      1 createHistory
+      1 div
+      1 'div'
+      1 document
+      2 history
+      1 'history'
+      1 LoginPage
+      1 './LoginPage'
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      1 store
+      1 '../../../../../store/configureStore'
+Total operands (first run): 24 of 22 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/components/login-page/LoginPage.test.js: 22 : 24
+
+
+File: src/app/modules/auth/login/constants.js
+-----------------------------
+with filtering:
+===============
+      1 'login'
+      1 NAME
+Total operands (first run): 2 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/constants.js: 2 : 2
+
+
+File: src/app/modules/auth/login/index.js
+-----------------------------
+with filtering:
+===============
+      2 actions
+      1 './actions/actions'
+      2 components
+      1 './components'
+      2 constants
+      1 './constants'
+      2 reducer
+      1 './reducer'
+      2 selectors
+      1 './selectors'
+Total operands (first run): 15 of 10 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/index.js: 10 : 15
+
+
+File: src/app/modules/auth/login/reducer.js
+-----------------------------
+with filtering:
+===============
+      4 action
+      3 loggedInUser
+      2 login
+      3 loginForm
+      2 loginProcess
+      1 process
+      1 './reducers/loggedInUser'
+      1 './reducers/loginForm'
+      1 './reducers/loginProcess'
+      4 state
+Total operands (first run): 22 of 10 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/reducer.js: 10 : 22
+
+
+File: src/app/modules/auth/login/reducers/loggedInUser.js
+-----------------------------
+with filtering:
+===============
+      3 action
+      1 '../actions/actionTypes'
+      2 console
+      3 debug
+      1 '../../../../../debug'
+      2 loggedInUser
+      1 payload
+      2 `reducer ${action.type} called`
+      1 SET_LOGGED_IN_USER
+      2 state
+      3 t
+      1 type
+      1 UNSET_LOGGED_IN_USER
+Total operands (first run): 23 of 13 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/reducers/loggedInUser.js: 13 : 23
+
+
+File: src/app/modules/auth/login/reducers/loginForm.js
+-----------------------------
+with filtering:
+===============
+      2 action
+      1 '../actions/actionTypes'
+      2 formReducer
+      1 LOGIN_CANCELLED
+      1 LOGIN_FAILED
+      1 LoginForm
+      1 LOGIN_SUCCESS
+      1 reducer
+      1 'redux-form'
+      2 state
+      4 t
+      1 type
+Total operands (first run): 18 of 12 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/reducers/loginForm.js: 12 : 18
+
+
+File: src/app/modules/auth/login/reducers/loginProcess.js
+-----------------------------
+with filtering:
+===============
+      4 action
+      1 '../actions/actionTypes'
+      6 error
+      4 false
+      2 initialState
+      5 inProgress
+      1 LOGIN
+      1 LOGIN_FAILED
+      2 loginProcess
+      1 LOGIN_SUCCESS
+      1 LOGOUT_FAILED
+      1 LOGOUT_SUCCESS
+      2 message
+      2 payload
+      6 state
+      6 t
+      1 type
+Total operands (first run): 46 of 17 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/reducers/loginProcess.js: 17 : 46
+
+
+File: src/app/modules/auth/login/selectors.js
+-----------------------------
+with filtering:
+===============
+      2 _
+      1 auth
+      1 './constants'
+      1 getAll
+      1 getForm
+      1 getLoggedInUser
+      1 isAuthenticated
+      1 'lodash'
+      2 loggedInUser
+      1 loginForm
+      1 NAME
+      8 state
+Total operands (first run): 21 of 12 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/login/selectors.js: 12 : 21
+
+
+File: src/app/modules/auth/reducer.js
+-----------------------------
+with filtering:
+===============
+      3 action
+      2 auth
+      3 login
+      1 './login/reducer'
+      3 state
+      3 user
+      1 './user/reducer'
+Total operands (first run): 16 of 7 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/reducer.js: 7 : 16
+
+
+File: src/app/modules/auth/selectors.js
+-----------------------------
+with filtering:
+===============
+      1 './constants'
+      1 getAll
+      1 NAME
+      2 state
+Total operands (first run): 5 of 4 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/selectors.js: 4 : 5
+
+
+File: src/app/modules/auth/user/actions/actions.js
+-----------------------------
+with filtering:
+===============
+      1 './actionTypes'
+      2 dispatch
+      4 e
+      1 error
+      1 fetchUsers
+      2 FETCH_USERS
+      1 fetchUsersFailure
+      1 FETCH_USERS_FAILURE
+      1 fetchUsersSuccess
+      1 FETCH_USERS_SUCCESS
+      1 findUserById
+      1 findUserByName
+      2 getState
+      3 id
+      3 name
+      2 payload
+      1 result
+      5 t
+      4 type
+      3 users
+Total operands (first run): 40 of 20 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/actions/actions.js: 20 : 40
+
+
+File: src/app/modules/auth/user/actions/actionTypes.js
+-----------------------------
+with filtering:
+===============
+      1 'ADD_USER'
+      1 ADD_USER
+      1 'FETCH_USERS'
+      1 FETCH_USERS
+      1 'FETCH_USERS_FAILURE'
+      1 FETCH_USERS_FAILURE
+      1 'FETCH_USERS_SUCCESS'
+      1 FETCH_USERS_SUCCESS
+      1 'REMOVE_USER'
+      1 REMOVE_USER
+      1 'UPDATE_USER'
+      1 UPDATE_USER
+Total operands (first run): 12 of 12 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/actions/actionTypes.js: 12 : 12
+
+
+File: src/app/modules/auth/user/constants.js
+-----------------------------
+with filtering:
+===============
+      1 NAME
+      1 'user'
+Total operands (first run): 2 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/constants.js: 2 : 2
+
+
+File: src/app/modules/auth/user/index.js
+-----------------------------
+with filtering:
+===============
+      2 actions
+      1 './actions/actions'
+      2 constants
+      1 './constants'
+      2 reducer
+      1 './reducer'
+      2 selectors
+      1 './selectors'
+Total operands (first run): 12 of 8 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/index.js: 8 : 12
+
+
+File: src/app/modules/auth/user/reducer.js
+-----------------------------
+with filtering:
+===============
+      2 action
+      1 entries
+      1 './reducers/userList'
+      3 state
+      2 user
+      2 userList
+Total operands (first run): 11 of 6 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/reducer.js: 6 : 11
+
+
+File: src/app/modules/auth/user/reducers/userList.js
+-----------------------------
+with filtering:
+===============
+      5 action
+      1 '../actions/actionTypes'
+      1 ADD_USER
+      6 error
+      1 FETCH_USERS
+      1 FETCH_USERS_FAILURE
+      1 FETCH_USERS_SUCCESS
+      2 initialStateUsers
+      1 './initialStateUsers'
+      3 loading
+      2 message
+      3 null
+      3 payload
+      1 REMOVE_USER
+      5 state
+      7 t
+      1 type
+      1 UPDATE_USER
+      2 userList
+      3 users
+Total operands (first run): 50 of 20 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/reducers/userList.js: 20 : 50
+
+
+File: src/app/modules/auth/user/selectors.js
+-----------------------------
+with filtering:
+===============
+      2 _
+      1 auth
+      1 './constants'
+      2 e
+      1 findUserById
+      1 findUserByName
+      1 getAll
+      1 getAllUsers
+      3 id
+      1 'lodash'
+      2 name
+      1 NAME
+      8 state
+      3 userList
+      3 users
+Total operands (first run): 31 of 15 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/auth/user/selectors.js: 15 : 31
+
+
+File: src/app/modules/blog/actions/actions.js
+-----------------------------
+with filtering:
+===============
+      4 '-'
+      1 0x10000
+      1 './actionTypes'
+      1 active
+      1 addEntry
+      1 ADD_ENTRY
+      1 addEntryFailure
+      1 ADD_ENTRY_FAILURE
+      1 addEntrySuccess
+      1 ADD_ENTRY_SUCCESS
+      1 blog
+      1 createNewEntry
+      2 date
+      1 deleteEntry
+      4 dispatch
+      1 editEntry
+      1 EDIT_ENTRY
+      1 editEntryFinished
+      1 EDIT_ENTRY_FINISHED
+      6 entries
+      2 entriesList
+     10 entry
+      4 error
+      1 false
+      1 fetchEntries
+      1 FETCH_ENTRIES
+      1 fetchEntriesFailure
+      1 FETCH_ENTRIES_FAILURE
+      1 fetchEntriesSuccess
+      1 FETCH_ENTRIES_SUCCESS
+      3 getState
+      1 guid
+     13 id
+      1 loadEntries
+      2 Math
+      3 merged
+      5 newEntry
+      1 Object
+      2 oldEntry
+     10 payload
+      1 removeEntry
+      1 REMOVE_ENTRY
+      1 removeEntryFailure
+      1 REMOVE_ENTRY_FAILURE
+      1 removeEntrySuccess
+      1 REMOVE_ENTRY_SUCCESS
+      1 s4
+      1 saveEntry
+      1 showForm
+     15 t
+      1 true
+     14 type
+      1 updateEntry
+      1 UPDATE_ENTRY
+      1 updateEntryFailure
+      1 UPDATE_ENTRY_FAILURE
+      1 updateEntrySuccess
+      1 UPDATE_ENTRY_SUCCESS
+      2 1
+      1 16
+Total operands (first run): 144 of 60 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/actions/actions.js: 60 : 144
+
+
+File: src/app/modules/blog/actions/actions.test.js
+-----------------------------
+with filtering:
+===============
+      1 'a8655eb5-ca5c-459a-a094-d0e704e80a69'
+      2 actions
+      1 './actions'
+      1 'actions'
+      1 './actionTypes'
+      1 active
+      1 ADD_ENTRY_SUCCESS
+      1 author
+      1 'cat1.jpg'
+      1 date
+      1 'dc2a4182-71a0-4fed-98dd-22b4d5104e40'
+      2 entry
+      2 expectedAction
+      1 id
+      1 image
+      1 'Just a little\n test'
+      1 payload
+      1 'should create an action to add a blog entry'
+      1 showForm
+      1 tags
+      1 'Testentry'
+      1 text
+      1 'The test user himself'
+      1 title
+      1 true
+      1 type
+      2 types
+      1 user
+      1 '2017-06-05T14:46:23.977Z'
+Total operands (first run): 33 of 29 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/actions/actions.test.js: 29 : 33
+
+
+File: src/app/modules/blog/actions/actionTypes.js
+-----------------------------
+with filtering:
+===============
+      1 'ADD_ENTRY'
+      1 ADD_ENTRY
+      1 'ADD_ENTRY_FAILURE'
+      1 ADD_ENTRY_FAILURE
+      1 'ADD_ENTRY_SUCCESS'
+      1 ADD_ENTRY_SUCCESS
+      1 'EDIT_CURRENT_ENTRY'
+      1 EDIT_CURRENT_ENTRY
+      1 'EDIT_CURRENT_ENTRY_FINISHED'
+      1 EDIT_CURRENT_ENTRY_FINISHED
+      1 'EDIT_ENTRY'
+      1 EDIT_ENTRY
+      1 'EDIT_ENTRY_FINISHED'
+      1 EDIT_ENTRY_FINISHED
+      1 'FETCH_ENTRIES'
+      1 FETCH_ENTRIES
+      1 'FETCH_ENTRIES_FAILURE'
+      1 FETCH_ENTRIES_FAILURE
+      1 'FETCH_ENTRIES_SUCCESS'
+      1 FETCH_ENTRIES_SUCCESS
+      1 'FETCH_ENTRY'
+      1 FETCH_ENTRY
+      1 'FETCH_ENTRY_FAILURE'
+      1 FETCH_ENTRY_FAILURE
+      1 'FETCH_ENTRY_SUCCESS'
+      1 FETCH_ENTRY_SUCCESS
+      1 'NEW_ENTRY'
+      1 NEW_ENTRY
+      1 'REMOVE_ENTRY'
+      1 REMOVE_ENTRY
+      1 'REMOVE_ENTRY_FAILURE'
+      1 REMOVE_ENTRY_FAILURE
+      1 'REMOVE_ENTRY_SUCCESS'
+      1 REMOVE_ENTRY_SUCCESS
+      1 'RESET_ENTRIES'
+      1 RESET_ENTRIES
+      1 'SET_CURRENT_ENTRY'
+      1 SET_CURRENT_ENTRY
+      1 'SET_CURRENT_ENTRY_BY_ID'
+      1 SET_CURRENT_ENTRY_BY_ID
+      1 'UNSET_CURRENT_ENTRY'
+      1 UNSET_CURRENT_ENTRY
+      1 'UPDATE_ENTRY'
+      1 UPDATE_ENTRY
+      1 'UPDATE_ENTRY_FAILURE'
+      1 UPDATE_ENTRY_FAILURE
+      1 'UPDATE_ENTRY_SUCCESS'
+      1 UPDATE_ENTRY_SUCCESS
+Total operands (first run): 48 of 48 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/actions/actionTypes.js: 48 : 48
+
+
+File: src/app/modules/blog/components/blog-item/BlogItem.jsx
+-----------------------------
+with filtering:
+===============
+      1 active
+      2 author
+      1 "blog-image"
+      3 BlogItem
+      1 "BlogItem"
+      1 './BlogItem.css'
+      1 "blog-summary"
+      2 date
+      1 dateFormat
+      1 "fa fa-edit"
+      1 "fa fa-trash"
+      2 func
+      2 id
+      1 image
+      1 `/images/${item.image}`
+      3 isRequired
+     13 item
+      1 null
+      1 object
+      2 onDelete
+      2 onEdit
+      1 'prop-types'
+      1 propTypes
+      4 PropTypes
+      1 'react'
+      1 React
+      1 rest
+      1 '../../../shared/utils'
+      1 text
+      2 title
+Total operands (first run): 56 of 30 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-item/BlogItem.jsx: 30 : 56
+
+
+File: src/app/modules/blog/components/blog-item/BlogItem.test.js
+-----------------------------
+with filtering:
+===============
+      1 0
+      1 blogItem
+      1 BlogItem
+      1 './BlogItem'
+      1 div
+      1 'div'
+      1 document
+      1 'http://logos.com/media/VerseOfTheDay/768x432/2016-12-27.png'
+      1 id
+      1 image
+      1 'Just to test it...'
+      1 'Mock blog item'
+      1 mockDelete
+      1 mockEdit
+      1 'react'
+      1 React
+      1 'react-dom'
+      1 ReactDOM
+      1 'renders without crashing'
+      1 text
+      1 title
+      2 true
+Total operands (first run): 23 of 22 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-item/BlogItem.test.js: 22 : 23
+
+
+File: src/app/modules/blog/components/blog-list/BlogList.jsx
+-----------------------------
+with filtering:
+===============
+      1 '../..'
+      1 actions
+      1 active
+      1 array
+      1 bindActionCreators
+      5 Blog
+      2 BlogItem
+      3 BlogList
+      1 "BlogList"
+      2 components
+      1 connect
+      3 deleteEntry
+      2 dispatch
+      3 editEntry
+      2 EditEntryFormContainer
+      1 `EditEntryForm_${entry.id}`
+      5 entries
+      6 entry
+      2 func
+      1 id
+      3 isRequired
+      4 itemList
+      2 mapDispatchToProps
+      2 mapStateToProps
+      2 null
+      1 'prop-types'
+      1 propTypes
+      4 PropTypes
+      1 'react'
+      1 React
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'redux'
+      1 selectors
+      2 state
+      1 withRouter
+Total operands (first run): 72 of 36 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-list/BlogList.jsx: 36 : 72
+
+
+File: src/app/modules/blog/components/blog-list/BlogList.test.js
+-----------------------------
+with filtering:
+===============
+      1 BlogList
+      1 './BlogList'
+      1 BrowserRouter
+      1 configureStore
+      1 createBrowserHistory
+      1 createHistory
+      1 div
+      1 'div'
+      1 document
+      2 history
+      1 'history'
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      1 store
+      1 '../../../../store/configureStore'
+Total operands (first run): 24 of 22 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-list/BlogList.test.js: 22 : 24
+
+
+File: src/app/modules/blog/components/blog-page/BlogPage.jsx
+-----------------------------
+with filtering:
+===============
+      1 _
+      1 '../..'
+      1 actions
+      1 "attentionItem"
+      1 bindActionCreators
+      1 'block'
+      5 Blog
+      1 'Blog'
+      2 BlogList
+      3 BlogPage
+      1 './BlogPage.css'
+      1 "btn"
+      1 Component
+      2 components
+      1 connect
+      1 Create
+      3 createNewEntry
+      2 dispatch
+      1 display
+      1 document
+      2 EditEntryFormContainer
+      1 func
+      2 isRequired
+      1 "jumbotron"
+      5 lastEntry
+      1 "listContent"
+      1 'lodash'
+      1 "mainContent"
+      1 mapDispatchToProps
+      2 mapStateToProps
+      1 New
+      2 newButtonShow
+      1 'none'
+      1 object
+      1 props
+      1 'prop-types'
+      1 propTypes
+      3 PropTypes
+      1 'react'
+      2 React
+      1 'react-redux'
+      1 'redux'
+      1 rest
+      1 selectors
+      1 showForm
+      2 state
+      4 title
+      1 "title"
+Total operands (first run): 74 of 48 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-page/BlogPage.jsx: 48 : 74
+
+
+File: src/app/modules/blog/components/blog-page/BlogPage.test.js
+-----------------------------
+with filtering:
+===============
+      1 BlogPage
+      1 './BlogPage'
+      1 BrowserRouter
+      1 configureStore
+      1 createBrowserHistory
+      1 createHistory
+      1 div
+      1 'div'
+      1 document
+      2 history
+      1 'history'
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      1 store
+      1 '../../../../store/configureStore'
+Total operands (first run): 24 of 22 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/blog-page/BlogPage.test.js: 22 : 24
+
+
+File: src/app/modules/blog/components/edit-entry-form-container/EditEntryFormContainer.jsx
+-----------------------------
+with filtering:
+===============
+      2 _
+      1 '../..'
+      1 actions
+      1 '../../../auth/login'
+      1 author
+      1 bindActionCreators
+      4 Blog
+      1 components
+      1 connect
+      1 console
+      2 debug
+      1 '../../../../../debug'
+      2 dispatch
+      3 editEntryFinished
+      2 EditEntryForm
+      1 'EditEntryForm'
+      5 EditEntryFormContainer
+      9 entry
+      1 form
+      2 func
+      1 getFormState
+      3 id
+      2 isRequired
+      3 location
+      1 'lodash'
+      6 loggedInUser
+      1 '/login'
+      2 Login
+      1 mapDispatchToProps
+      2 mapStateToProps
+      1 name
+      2 null
+      1 object
+      2 pathname
+      1 'prop-types'
+      1 propTypes
+      4 PropTypes
+      1 'react'
+      1 React
+      1 'react-redux'
+      1 'react-redux-toastr'
+      1 'react-router'
+      1 'react-router-dom'
+      1 Redirect
+      1 'redux'
+      1 'redux-form'
+      1 reduxForm
+      1 referrer
+      2 rest
+      3 saveEntry
+      2 selectors
+      1 showForm
+      5 state
+      2 toastr
+      3 user
+      1 validate
+      1 './validate'
+      1 withRouter
+      1 'You can only edit your own entries'
+Total operands (first run): 109 of 59 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/edit-entry-form-container/EditEntryFormContainer.jsx: 59 : 109
+
+
+File: src/app/modules/blog/components/edit-entry-form-container/EditEntryFormContainer.test.js
+-----------------------------
+with filtering:
+===============
+      3 ''
+      1 BrowserRouter
+      1 configureStore
+      1 console
+      1 createBrowserHistory
+      1 createHistory
+      1 div
+      1 'div'
+      1 document
+      1 EditEntryFormContainer
+      1 './EditEntryFormContainer'
+      2 history
+      1 'history'
+      1 id
+      1 image
+      2 newEntry
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      2 saveEntry
+      1 store
+      1 '../../../../store/configureStore'
+      1 'TEST: submit form'
+      1 text
+      1 title
+      1 true
+      1 undefined
+Total operands (first run): 39 of 33 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/edit-entry-form-container/EditEntryFormContainer.test.js: 33 : 39
+
+
+File: src/app/modules/blog/components/edit-entry-form-container/validate.js
+-----------------------------
+with filtering:
+===============
+      6 errors
+      1 length
+      1 'Required'
+      2 text
+      5 title
+      1 'Title is required'
+      1 'Title must be 5 or more characters long'
+      1 'Title must be less than 128 characters'
+      2 validate
+      4 values
+      1 128
+Total operands (first run): 25 of 11 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/edit-entry-form-container/validate.js: 11 : 25
+
+
+File: src/app/modules/blog/components/edit-entry-form/EditEntryForm.jsx
+-----------------------------
+with filtering:
+===============
+      1 ''
+      2 "alert alert-danger"
+      1 "author"
+      1 "Bildadresse eingeben."
+      1 "Bild-URL"
+      1 Blogeintrag
+      2 bool
+      2 "btn btn-default"
+      1 "button"
+      4 className
+      1 Component
+      2 console
+      3 debug
+      1 '../../../../../debug'
+      2 document
+      1 editable
+      1 'Edit entry'
+      2 EditEntryForm
+      1 './EditEntryForm.css'
+      6 error
+      4 errors
+      1 field
+      1 Field
+      7 fillForm
+      1 'fillForm prop received: '
+      3 "form-control"
+      3 "form-group"
+      3 func
+      2 handleSubmit
+      4 "hidden"
+      1 "id"
+      1 "image"
+      1 "Inhalt"
+      4 input
+      1 invalid
+      4 isRequired
+      4 label
+      1 make
+      2 meta
+      6 nextProps
+      1 object
+      3 onReset
+      3 onSubmit
+      4 placeholder
+      2 pristine
+      8 props
+      1 'props: '
+      1 'prop-types'
+      1 propTypes
+      7 PropTypes
+      1 'react'
+      2 React
+      1 'redux-form'
+      5 renderField
+      2 renderTextArea
+      2 state
+      1 "submit"
+      4 submitting
+      3 "text"
+      1 "Textinhalt eingeben."
+      1 "Titel"
+      1 "Titel eingeben."
+      4 title
+      1 "title"
+      1 TODO
+      4 touched
+      2 type
+Total operands (first run): 157 of 67 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/edit-entry-form/EditEntryForm.jsx: 67 : 157
+
+
+File: src/app/modules/blog/components/edit-entry-form/EditEntryForm.test.js
+-----------------------------
+with filtering:
+===============
+      1 '../..'
+      2 Blog
+      1 console
+      1 div
+      1 'div'
+      1 document
+      2 EditEntryForm
+      1 './EditEntryForm'
+      1 'EditEntryForm'
+      1 ef
+      1 form
+      1 getFormState
+      1 onSubmit
+      1 'react'
+      1 React
+      1 'react-dom'
+      1 ReactDOM
+      1 'redux-form'
+      1 reduxForm
+      1 'renders without crashing'
+      1 selectors
+      2 state
+      1 'TEST: submit form'
+      1 validate
+Total operands (first run): 27 of 24 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/edit-entry-form/EditEntryForm.test.js: 24 : 27
+
+
+File: src/app/modules/blog/components/index.js
+-----------------------------
+with filtering:
+===============
+      2 BlogItem
+      1 './blog-item/BlogItem'
+      2 BlogList
+      1 './blog-list/BlogList'
+      2 BlogPage
+      1 './blog-page/BlogPage'
+      2 EditEntryForm
+      2 EditEntryFormContainer
+      1 './edit-entry-form-container/EditEntryFormContainer'
+      1 './edit-entry-form/EditEntryForm'
+Total operands (first run): 15 of 10 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/components/index.js: 10 : 15
+
+
+File: src/app/modules/blog/constants.js
+-----------------------------
+with filtering:
+===============
+      1 'blog'
+      1 NAME
+Total operands (first run): 2 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/constants.js: 2 : 2
+
+
+File: src/app/modules/blog/index.js
+-----------------------------
+with filtering:
+===============
+      2 actions
+      1 './actions/actions'
+      2 components
+      1 './components'
+      2 constants
+      1 './constants'
+      2 reducer
+      1 './reducer'
+      2 selectors
+      1 './selectors'
+Total operands (first run): 15 of 10 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/index.js: 10 : 15
+
+
+File: src/app/modules/blog/reducer.js
+-----------------------------
+with filtering:
+===============
+      3 action
+      2 blog
+      3 editEntryForm
+      3 entries
+      1 './reducers/editEntryForm'
+      1 './reducers/entries'
+      4 state
+Total operands (first run): 17 of 7 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/reducer.js: 7 : 17
+
+
+File: src/app/modules/blog/reducers/editEntryForm.js
+-----------------------------
+with filtering:
+===============
+      2 action
+      1 '../actions/actionTypes'
+      1 ADD_ENTRY_SUCCESS
+      1 EditEntryForm
+      2 formReducer
+      1 reducer
+      1 'redux-form'
+      2 state
+      3 t
+      1 type
+      2 undefined
+      1 UNSET_CURRENT_ENTRY
+Total operands (first run): 18 of 12 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/reducers/editEntryForm.js: 12 : 18
+
+
+File: src/app/modules/blog/reducers/entries.js
+-----------------------------
+with filtering:
+===============
+     10 action
+      1 '../actions/actionTypes'
+      1 ADD_ENTRY
+      1 ADD_ENTRY_SUCCESS
+      8 e
+      1 EDIT_ENTRY
+      1 EDIT_ENTRY_FINISHED
+     16 entries
+     22 entriesList
+      1 entry
+      1 './entry'
+     15 error
+      1 FETCH_ENTRIES
+      1 FETCH_ENTRIES_FAILURE
+      1 FETCH_ENTRIES_SUCCESS
+      2 initialStateEntries
+      1 './initialStateEntries'
+     12 loading
+      2 message
+     12 null
+      3 payload
+      1 REMOVE_ENTRY
+      1 REMOVE_ENTRY_SUCCESS
+      1 RESET_ENTRIES
+     24 state
+     13 t
+      1 type
+      1 undefined
+      1 UPDATE_ENTRY
+      1 UPDATE_ENTRY_SUCCESS
+Total operands (first run): 157 of 30 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/reducers/entries.js: 30 : 157
+
+
+File: src/app/modules/blog/reducers/entry.js
+-----------------------------
+with filtering:
+===============
+     11 action
+      1 '../actions/actionTypes'
+      1 active
+      1 ADD_ENTRY_FAILURE
+      1 ADD_ENTRY_SUCCESS
+      1 EDIT_ENTRY
+      1 EDIT_ENTRY_FINISHED
+      2 entry
+      1 false
+      7 id
+      9 payload
+      1 REMOVE_ENTRY_FAILURE
+      1 REMOVE_ENTRY_SUCCESS
+      3 showForm
+     16 state
+      9 t
+      1 type
+      2 undefined
+      1 UPDATE_ENTRY_FAILURE
+      1 UPDATE_ENTRY_SUCCESS
+Total operands (first run): 71 of 20 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/reducers/entry.js: 20 : 71
+
+
+File: src/app/modules/blog/selectors.js
+-----------------------------
+with filtering:
+===============
+      1 './constants'
+      1 editEntryForm
+      6 entries
+      3 entriesList
+      1 getAll
+      1 getAllEntries
+      1 getEditEntryForm
+      1 getEntriesCount
+      1 getLastEntry
+      1 length
+      1 NAME
+     11 state
+      1 1
+Total operands (first run): 30 of 13 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/blog/selectors.js: 13 : 30
+
+
+File: src/app/modules/shared/components/index.js
+-----------------------------
+with filtering:
+===============
+      2 Layout
+      1 './layout/Layout'
+      2 NavBar
+      1 './navbar/NavBar'
+      2 PrivateRoute
+      1 './privateroute/PrivateRoute'
+Total operands (first run): 9 of 6 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/index.js: 6 : 9
+
+
+File: src/app/modules/shared/components/layout/Layout.jsx
+-----------------------------
+with filtering:
+===============
+      3 children
+      1 "container"
+      1 "content"
+      1 "footer"
+      1 isRequired
+      3 Layout
+      1 "Layout"
+      1 './Layout.css'
+      1 NavBar
+      1 "NavBar"
+      1 '../navbar/NavBar'
+      1 object
+      1 'prop-types'
+      1 propTypes
+      2 PropTypes
+      1 'react'
+      1 React
+Total operands (first run): 22 of 17 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/layout/Layout.jsx: 17 : 22
+
+
+File: src/app/modules/shared/components/layout/Layout.test.js
+-----------------------------
+with filtering:
+===============
+      1 BrowserRouter
+      1 'CK\'
+      2 div
+      1 'div'
+      1 document
+      1 Layout
+      1 './Layout'
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+      1 s
+      1 title
+Total operands (first run): 18 of 16 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/layout/Layout.test.js: 16 : 18
+
+
+File: src/app/modules/shared/components/navbar/NavBar.jsx
+-----------------------------
+with filtering:
+===============
+      1 "/admin"
+      1 "/blog"
+      1 "container-fluid"
+      1 "/home"
+      1 Link
+      1 "/login"
+      1 match
+      2 NavBar
+      1 './NavBar.css'
+      1 "navbar navbar-default"
+      1 "nav navbar-nav navbar-left"
+      1 'react'
+      1 React
+      1 'react-router-dom'
+Total operands (first run): 15 of 14 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/navbar/NavBar.jsx: 14 : 15
+
+
+File: src/app/modules/shared/components/navbar/NavBar.test.js
+-----------------------------
+with filtering:
+===============
+      1 BrowserRouter
+      1 div
+      1 'div'
+      1 document
+      1 NavBar
+      1 './NavBar'
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+Total operands (first run): 14 of 13 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/navbar/NavBar.test.js: 13 : 14
+
+
+File: src/app/modules/shared/components/privateroute/PrivateRoute.jsx
+-----------------------------
+with filtering:
+===============
+      1 bool
+      2 component
+      1 Component
+      1 func
+      3 isAuthorized
+      2 isRequired
+      1 location
+      1 '/login'
+      1 pathname
+      3 PrivateRoute
+      1 props
+      1 'prop-types'
+      1 propTypes
+      3 PropTypes
+      1 'react'
+      1 React
+      1 'react-router-dom'
+      1 Redirect
+      1 rest
+      1 Route
+      1 state
+Total operands (first run): 29 of 21 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/privateroute/PrivateRoute.jsx: 21 : 29
+
+
+File: src/app/modules/shared/components/privateroute/PrivateRoute.test.js
+-----------------------------
+with filtering:
+===============
+      1 BrowserRouter
+      1 div
+      1 'div'
+      1 document
+      1 false
+      1 PrivateRoute
+      1 './PrivateRoute'
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-router-dom'
+      1 'renders without crashing'
+      1 Router
+Total operands (first run): 15 of 14 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/components/privateroute/PrivateRoute.test.js: 14 : 15
+
+
+File: src/app/modules/shared/index.js
+-----------------------------
+with filtering:
+===============
+      2 components
+      1 './components'
+      2 utils
+      1 './utils'
+Total operands (first run): 6 of 4 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/index.js: 4 : 6
+
+
+File: src/app/modules/shared/utils/dateFormat.js
+-----------------------------
+with filtering:
+===============
+      2 ' '
+      2 date
+      1 day
+      1 'de-CH'
+      1 function
+      1 'long'
+      1 month
+      2 'numeric'
+      1 year
+Total operands (first run): 12 of 9 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/utils/dateFormat.js: 9 : 12
+
+
+File: src/app/modules/shared/utils/index.js
+-----------------------------
+with filtering:
+===============
+      2 dateFormat
+      1 './dateFormat'
+Total operands (first run): 3 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/modules/shared/utils/index.js: 2 : 3
+
+
+File: src/app/routes/index.js
+-----------------------------
+with filtering:
+===============
+      1 "/"
+      1 "*"
+      1 "/admin"
+      1 "/blog/"
+      4 Blog
+      3 BlogPage
+      1 bool
+      6 components
+      1 connect
+      1 exact
+      1 "/home"
+      4 isAuthenticated
+      1 isRequired
+      2 Layout
+      1 loggedInUser
+      1 "/login/"
+      3 Login
+      1 LoginPage
+      2 mapStateToProps
+      1 '../modules/auth/login'
+      1 '../modules/blog'
+      1 '../modules/shared'
+      1 object
+      2 PrivateRoute
+      1 'prop-types'
+      1 propTypes
+      3 PropTypes
+      1 'react'
+      1 React
+      1 'react-redux'
+      1 'react-router-dom'
+      1 rest
+      1 Route
+      3 Routes
+      1 selectors
+      3 Shared
+      2 state
+      1 Switch
+      1 withRouter
+Total operands (first run): 64 of 39 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/routes/index.js: 39 : 64
+
+
+File: src/app/store/configureStore.js
+-----------------------------
+with filtering:
+===============
+      1 applyMiddleware
+      2 configureStore
+      1 createStore
+      1 error
+      2 history
+      2 initialState
+      1 logger
+      1 './middleware.js'
+      2 middlewares
+      3 myMiddleware
+      1 promise
+      1 'react-router-redux'
+      1 'redux'
+      1 'redux-promise-middleware'
+      1 'redux-thunk'
+      2 rootReducer
+      1 './rootReducer'
+      1 routerMiddleware
+      2 store
+      2 thunk
+Total operands (first run): 29 of 20 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/store/configureStore.js: 20 : 29
+
+
+File: src/app/store/index.js
+-----------------------------
+with filtering:
+===============
+      1 configureStore
+      1 './configureStore'
+      2 initialState
+      1 __INITIAL_STATE__
+      2 store
+      1 typeof
+      1 undefined
+      1 'undefined'
+      2 window
+Total operands (first run): 12 of 9 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/store/index.js: 9 : 12
+
+
+File: src/app/store/middleware.js
+-----------------------------
+with filtering:
+===============
+      4 action
+      1 console
+      2 e
+      1 error
+      1 'ERROR in action firing: '
+      1 logger
+      2 next
+      2 store
+Total operands (first run): 14 of 8 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/store/middleware.js: 8 : 14
+
+
+File: src/app/store/rootReducer.js
+-----------------------------
+with filtering:
+===============
+      3 auth
+      3 blog
+      1 combineReducers
+      2 constants
+      1 '../modules/auth'
+      1 '../modules/blog'
+      1 'react-redux-toastr'
+      3 reducer
+      1 'redux'
+      1 toastr
+Total operands (first run): 17 of 10 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/app/store/rootReducer.js: 10 : 17
+
+
+File: src/debug.js
+-----------------------------
+with filtering:
+===============
+      2 debug
+      1 false
+Total operands (first run): 3 of 2 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/debug.js: 2 : 3
+
+
+File: src/index.js
+-----------------------------
+with filtering:
+===============
+      1 'animate.css/animate.min.css'
+      1 './app/routes'
+      1 './app/store/configureStore'
+      1 "bounceIn"
+      1 BrowserRouter
+      1 configureStore
+      1 console
+      1 createBrowserHistory
+      1 createHistory
+      2 debug
+      1 './debug'
+      1 document
+      1 'font-awesome/css/font-awesome.css'
+      1 "hinge"
+      2 history
+      1 'history'
+      1 './index.styl'
+      2 initialState
+      1 __INITIAL_STATE__
+      2 mount
+      2 provider
+      1 Provider
+      1 'react'
+      1 React
+      1 'react-dom'
+      2 ReactDOM
+      1 'react-redux'
+      1 'react-redux-toastr'
+      1 './react-redux-toastr.min.css'
+      1 'react-router-dom'
+      1 ReduxToastr
+      1 registerServiceWorker
+      1 './registerServiceWorker'
+      1 'root'
+      1 Router
+      1 Routes
+      1 'state changed in store: '
+      3 store
+      1 "top-right"
+      2 true
+      1 typeof
+      1 undefined
+      1 'undefined'
+      2 window
+      1 5000
+Total operands (first run): 55 of 45 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/index.js: 45 : 55
+
+
+File: src/registerServiceWorker.js
+-----------------------------
+with filtering:
+===============
+      3 console
+      1 'Content is cached for offline use.'
+      1 controller
+      1 env
+      2 error
+      1 'Error during service worker registration:'
+      2 function
+      2 in
+      1 'installed'
+      1 installing
+      3 installingWorker
+      1 'load'
+      5 navigator
+      1 'New content is available; please refresh.'
+      1 NODE_ENV
+      1 onstatechange
+      1 onupdatefound
+      1 process
+      1 `${process.env.PUBLIC_URL}/service-worker.js`
+      1 'production'
+      1 ready
+      5 registration
+      3 serviceWorker
+      2 'serviceWorker'
+      1 state
+      2 swUrl
+      1 window
+Total operands (first run): 46 of 27 unique operands
+
+2nd run / corrections: 
+Total corrections to count: 0 of 0 unique operators
+
+n2 and N2 for src/registerServiceWorker.js: 27 : 46
+
+

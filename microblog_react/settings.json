@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "vsicons.presets.angular": true
+}

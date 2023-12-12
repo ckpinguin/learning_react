@@ -1,0 +1,9 @@
+      75 text files.
+classified 75 files      73 unique files.                              
+      16 files ignored.
+
+files,language,blank,comment,code,"github.com/AlDanial/cloc v 1.72  T=0.10 s (738.3 files/s, 23267.7 lines/s)"
+56,JavaScript,187,132,1077
+11,JSX,79,49,662
+2,JSON,0,0,62
+3,CSS,4,1,16
