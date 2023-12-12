@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "quotes": ["warn", "double"],
+    "linebreak-style": ["off", "windows"],
+    "no-unused-vars": "warn",
+    "semi": ["warn", "never"],
+    // Hacky rule-off for jsconfig.json config in nextjs
+    // (i.e. import rewrites of @/components to /components)
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off"
+  }
+}
