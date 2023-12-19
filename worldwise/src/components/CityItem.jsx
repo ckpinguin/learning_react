@@ -11,7 +11,6 @@ const formatDate = (date) =>
 
 export default function CityItem({ city }) {
   const { currentCity } = useCities()
-  console.log(currentCity)
   const { cityName, emoji, date, id, position } = city
   const { lat, lng } = position
 
