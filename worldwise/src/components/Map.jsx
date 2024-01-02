@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import styles from "./Map.module.css"
 import {
   MapContainer,
@@ -10,22 +10,37 @@ import {
 } from "react-leaflet"
 import { useEffect, useState } from "react"
 import { useCities } from "../context/CitiesContext"
+import { useGeoLocation } from "../hooks/useGeolocation"
+import { useUrlPosition } from "../hooks/useUrlPosition"
+import Button from "./Button"
 
 export default function Map() {
-  const [mapPosition, setMapPosition] = useState([40, 0])
-
-  const navigate = useNavigate()
   const { cities } = useCities()
-  const [searchParams] = useSearchParams()
-  const mapLat = searchParams.get("lat")
-  const mapLng = searchParams.get("lng")
-
+  const [mapPosition, setMapPosition] = useState([40, 0])
+  const {
+    isLoading: isLoadingPosition,
+    position: geolocationPosition,
+    error: geolocationError,
+    getPosition,
+  } = useGeoLocation()
+  const [mapLat, mapLng] = useUrlPosition()
   useEffect(() => {
     if (mapLat && mapLng) setMapPosition([mapLat, mapLng])
   }, [mapLat, mapLng])
 
+  useEffect(() => {
+    if (geolocationPosition)
+      setMapPosition([geolocationPosition.lat, geolocationPosition.lng])
+  }, [geolocationPosition])
+
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+        <Button type="position" onClick={getPosition}>
+          {isLoadingPosition ? "Loading..." : "Use your position: "}
+          {geolocationError ? "Error: " + geolocationError : ""}
+        </Button>
+      )}
       <MapContainer
         className={styles.map}
         center={mapPosition}
