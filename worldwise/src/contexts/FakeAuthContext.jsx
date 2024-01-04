@@ -26,19 +26,20 @@ const FAKE_USER = {
 }
 
 function AuthProvider({ children }) {
-  const [{ user, isAuthenticated }, dispatch] = useReducer(
-    reducer,
-    initialState,
-  )
+  const [state, dispatch] = useReducer(reducer, initialState)
+
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password)
       dispatch({ type: "login", payload: FAKE_USER })
+    else alert("Wrong user / password!")
   }
+
   function logout() {
     dispatch({ type: "logout" })
   }
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ ...state, login, logout }}>
       {children}
     </AuthContext.Provider>
   )
@@ -51,4 +52,4 @@ function useAuth() {
   return context
 }
 
-export { AuthContext, AuthProvider, useAuth }
+export { AuthProvider, useAuth }
