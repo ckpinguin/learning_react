@@ -68,7 +68,7 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
   const [
-    { questions, status, index, answer, points, highscore, secondsRemaining },
+    { questions, status, index, answer, points, highScore, secondsRemaining },
     dispatch,
   ] = useReducer(reducer, initialState)
 
@@ -92,7 +92,7 @@ function QuizProvider({ children }) {
         index,
         answer,
         points,
-        highscore,
+        highScore,
         secondsRemaining,
         numQuestions,
         maxPossiblePoints,
