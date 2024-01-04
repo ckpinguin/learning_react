@@ -1,7 +1,9 @@
 import React from "react"
+import { useQuiz } from "../contexts/QuizContext"
 
-export default function FinishScreen({ points, maxPoints, hiscore, dispatch }) {
-  const percentage = (points / maxPoints) * 100
+export default function FinishScreen() {
+  const { points, maxPossiblePoints, highScore, dispatch } = useQuiz()
+  const percentage = (points / maxPossiblePoints) * 100
 
   let emoji
   if (percentage === 100) emoji = "⭐"
@@ -14,9 +16,9 @@ export default function FinishScreen({ points, maxPoints, hiscore, dispatch }) {
     <>
       <p className="result">
         <span>{emoji}</span> You scored <strong>{points}</strong> out of{" "}
-        {maxPoints} ({Math.ceil(percentage)}%)
+        {maxPossiblePoints} ({Math.ceil(percentage)}%)
       </p>
-      <p className="highscore">(Highscore: {hiscore} points)</p>
+      <p className="highscore">(Highscore: {highScore} points)</p>
       <button
         className="btn btn-ui"
         onClick={() => dispatch({ type: "restart" })}

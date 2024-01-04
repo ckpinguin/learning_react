@@ -1,12 +1,8 @@
 import React from "react"
+import { useQuiz } from "../contexts/QuizContext"
 
-export default function Progress({
-  index,
-  numQuestions,
-  points,
-  maxPoints,
-  answer,
-}) {
+export default function Progress({ index }) {
+  const { numQuestions, answer, points, maxPossiblePoints } = useQuiz()
   return (
     <header className="progress">
       {/* Trick to update progress bar before explicitely going to the next question */}
@@ -15,7 +11,7 @@ export default function Progress({
         Question <strong>{index + 1}</strong> / {numQuestions}
       </p>
       <p>
-        <strong>{points}</strong> / {maxPoints}
+        <strong>{points}</strong> / {maxPossiblePoints}
       </p>
     </header>
   )
