@@ -37,18 +37,6 @@
       "id": 98443197
     },
     {
-      "cityName": "Ruti",
-      "country": "Switzerland",
-      "emoji": "🇨🇭",
-      "date": "2024-01-02T16:47:04.220Z",
-      "notes": "",
-      "position": {
-        "lat": "47.25843673351724",
-        "lng": "8.851763469955527"
-      },
-      "id": 98443198
-    },
-    {
       "cityName": "Bubikon",
       "country": "Switzerland",
       "emoji": "🇨🇭",
@@ -71,6 +59,18 @@
         "lng": "-0.021290087310970044"
       },
       "id": 98443200
+    },
+    {
+      "cityName": "Schonholzerswilen",
+      "country": "Switzerland",
+      "emoji": "🇨🇭",
+      "date": "2024-01-10T18:45:16.799Z",
+      "notes": "aieieie",
+      "position": {
+        "lat": "47.510614028642735",
+        "lng": "9.155131527904713"
+      },
+      "id": 98443201
     }
   ]
 }
