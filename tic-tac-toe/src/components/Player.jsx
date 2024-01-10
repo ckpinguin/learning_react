@@ -11,13 +11,13 @@ export default function Player({name, symbol}) {
     <li>
       <span className="player">
         {isEditing ? (
-          <input name="player-name"></input>
+          <input name="player-name" value={name}></input>
         ) : (
           <span className="player-name">{name}</span>
         )}
         <span className="player-symbol">{symbol}</span>
       </span>
-      <button onClick={handleEditClick}>Edit</button>
+      <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
     </li>
   )
 }
