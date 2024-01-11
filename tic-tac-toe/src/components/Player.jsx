@@ -4,7 +4,9 @@ export default function Player({name, symbol}) {
   const [isEditing, setIsEditing] = useState(false)
 
   function handleEditClick() {
-    setIsEditing(!isEditing)
+    // Never forget to use this construct instead of
+    // directly setting the value (state updates are scheduled!)
+    setIsEditing((isEditing) => !isEditing)
   }
 
   return (
