@@ -9,25 +9,35 @@ function Calculator({workouts, allowSound}) {
   const [duration, setDuration] = useState(0)
   //const duration = (number * sets * speed) / 60 + (sets - 1) * durationBreak
 
+  // Having several effects because every one is responsible
+  // for a specific part.
+  // set Duration:
   useEffect(() => {
     setDuration((number * sets * speed) / 60 + (sets - 1) * durationBreak)
   }, [number, sets, speed, durationBreak])
+  // play a sound:
+  useEffect(() => {
+    const playSound = function () {
+      if (!allowSound) return
+      const sound = new Audio(clickSound)
+      sound.play()
+    }
+    playSound()
+  }, [duration, allowSound])
+  // Set the pages's title
+  useEffect(() => {
+    document.title = `Your ${number}-exercise workout`
+  }, [number])
 
   const mins = Math.floor(duration)
   const seconds = (duration - mins) * 60
-
-  const playSound = function () {
-    if (!allowSound) return
-    const sound = new Audio(clickSound)
-    sound.play()
-  }
 
   function handleInc() {
     setDuration((duration) => Math.floor(duration + 1))
   }
 
   function handleDec() {
-    setDuration((duration) => duration - 1)
+    setDuration((duration) => (duration > 1 ? Math.ceil(duration - 1) : 0))
   }
 
   return (
