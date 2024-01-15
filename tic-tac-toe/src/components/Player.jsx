@@ -1,6 +1,7 @@
 import {useState} from "react"
 
-export default function Player({initialName, symbol}) {
+// eslint-disable-next-line react/prop-types
+export default function Player({initialName, symbol, isActive}) {
   const [isEditing, setIsEditing] = useState(false)
   const [playerName, setPlayerName] = useState(initialName)
 
@@ -16,20 +17,22 @@ export default function Player({initialName, symbol}) {
     setPlayerName(name)
   }
 
+  let editablePlayerName = ""
+  if (isEditing) {
+    editablePlayerName = (
+      <input
+        name="player-name"
+        onChange={handleChange}
+        value={playerName}
+        required
+      />
+    )
+  }
+
   return (
-    <li>
-      <span className="player">
-        {isEditing ? (
-          <input
-            name="player-name"
-            onChange={handleChange}
-            value={playerName}
-            required></input>
-        ) : (
-          <span className="player-name">{playerName}</span>
-        )}
-        <span className="player-symbol">{symbol}</span>
-      </span>
+    <li className={isActive ? "active" : undefined}>
+      <span className="player">{editablePlayerName}</span>
+      <span className="player-symbol">{symbol}</span>
       <button onClick={handleEditClick}>{isEditing ? "Save" : "Edit"}</button>
     </li>
   )
