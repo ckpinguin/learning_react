@@ -5,7 +5,12 @@ import Log from "./components/Log"
 import { WINNING_COMBINATIONS } from "./winningCombinations"
 import GameOver from "./components/GameOver"
 
-const initialGameBoard = [
+const PLAYERS = {
+  X: "Player 1",
+  O: "Player 2",
+}
+
+const INITIAL_GAME_BOARD = [
   [null, null, null],
   [null, null, null],
   [null, null, null],
@@ -19,17 +24,10 @@ function deriveActivePlayer(gameTurns) {
   return currentPlayer
 }
 
-function App() {
-  const [players, setPlayers] = useState({
-    X: "Player 1",
-    O: "Player 2",
-  })
-  const [gameTurns, setGameTurns] = useState([])
-  const currentPlayer = deriveActivePlayer(gameTurns)
-
+function deriveGameBoard(gameTurns) {
   // need a deep copy of initialGameboard! Otherwise
   // we always write on the original address
-  let gameBoard = [...initialGameBoard.map((array) => [...array])]
+  let gameBoard = [...INITIAL_GAME_BOARD.map((array) => [...array])]
 
   for (const turn of gameTurns) {
     const { square, player } = turn
@@ -37,24 +35,16 @@ function App() {
 
     gameBoard[row][col] = player
   }
+  return gameBoard
+}
 
-  let winner = null
-  for (const combination of WINNING_COMBINATIONS) {
-    console.log(combination)
-    const firstSquareSymbol = gameBoard[combination[0].row][combination[0].col]
-    const secondSquareSymbol = gameBoard[combination[1].row][combination[1].col]
-    const thirdSquareSymbol = gameBoard[combination[2].row][combination[2].col]
+function App() {
+  const [players, setPlayers] = useState(PLAYERS)
+  const [gameTurns, setGameTurns] = useState([])
+  const currentPlayer = deriveActivePlayer(gameTurns)
 
-    // Same symbol on all three squares
-    if (
-      firstSquareSymbol &&
-      firstSquareSymbol === secondSquareSymbol &&
-      firstSquareSymbol === thirdSquareSymbol
-    ) {
-      winner = players[firstSquareSymbol]
-    }
-  }
-
+  const gameBoard = deriveGameBoard(gameTurns)
+  const winner = deriveWinner(gameBoard, players)
   const hasDraw = gameTurns.length === 9 && !winner
 
   function handleSelectSquare(rowIndex, colIndex) {
@@ -82,19 +72,43 @@ function App() {
     })
   }
 
+  // This function needs to be here because it uses a state variable
+  function deriveWinner(gameBoard, players) {
+    let winner = null
+    for (const combination of WINNING_COMBINATIONS) {
+      console.log(combination)
+      const firstSquareSymbol =
+        gameBoard[combination[0].row][combination[0].col]
+      const secondSquareSymbol =
+        gameBoard[combination[1].row][combination[1].col]
+      const thirdSquareSymbol =
+        gameBoard[combination[2].row][combination[2].col]
+
+      // Same symbol on all three squares
+      if (
+        firstSquareSymbol &&
+        firstSquareSymbol === secondSquareSymbol &&
+        firstSquareSymbol === thirdSquareSymbol
+      ) {
+        winner = players[firstSquareSymbol]
+      }
+    }
+    return winner
+  }
+
   return (
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
           <Player
             isActive={currentPlayer === "X"}
-            initialName="Player 1"
+            initialName={PLAYERS.X}
             symbol="X"
             onChangeName={handlePlayerNameChange}
           />
           <Player
             isActive={currentPlayer === "O"}
-            initialName="Player 2"
+            initialName={PLAYERS.O}
             symbol="O"
             onChangeName={handlePlayerNameChange}
           />

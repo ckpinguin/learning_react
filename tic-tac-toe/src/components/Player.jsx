@@ -15,15 +15,16 @@ export default function Player({
     // (if updating state based on previous state)
     // directly setting the value (state updates are scheduled!)
     setIsEditing((isEditing) => !isEditing)
-    onChangeName(symbol, playerName)
+    if (isEditing) {
+      onChangeName(symbol, playerName)
+    }
   }
 
   function handleChange(e) {
     const name = e.target.value
     setPlayerName(name)
   }
-
-  let editablePlayerName = ""
+  let editablePlayerName = <span className="player-name">{playerName}</span>
   if (isEditing) {
     editablePlayerName = (
       <input
