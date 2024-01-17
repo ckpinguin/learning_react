@@ -1,7 +1,12 @@
-import {useState} from "react"
+import { useState } from "react"
 
 // eslint-disable-next-line react/prop-types
-export default function Player({initialName, symbol, isActive}) {
+export default function Player({
+  initialName,
+  symbol,
+  isActive,
+  onChangeName,
+}) {
   const [isEditing, setIsEditing] = useState(false)
   const [playerName, setPlayerName] = useState(initialName)
 
@@ -10,6 +15,7 @@ export default function Player({initialName, symbol, isActive}) {
     // (if updating state based on previous state)
     // directly setting the value (state updates are scheduled!)
     setIsEditing((isEditing) => !isEditing)
+    onChangeName(symbol, playerName)
   }
 
   function handleChange(e) {
