@@ -23,7 +23,9 @@ function App() {
   const [gameTurns, setGameTurns] = useState([])
   const currentPlayer = deriveActivePlayer(gameTurns)
 
-  let gameBoard = initialGameBoard
+  // need a deep copy of initialGameboard! Otherwise
+  // we always write on the original address
+  let gameBoard = [...initialGameBoard.map((array) => [...array])]
 
   for (const turn of gameTurns) {
     const { square, player } = turn
