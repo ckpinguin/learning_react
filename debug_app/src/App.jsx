@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useState, StrictMode } from "react"
 
-import Header from './components/Header.jsx';
-import UserInput from './components/UserInput.jsx';
-import Results from './components/Results.jsx';
+import Header from "./components/Header.jsx"
+import UserInput from "./components/UserInput.jsx"
+import Results from "./components/Results.jsx"
 
 function App() {
   const [userInput, setUserInput] = useState({
@@ -10,24 +10,24 @@ function App() {
     annualInvestment: 1200,
     expectedReturn: 6,
     duration: 10,
-  });
+  })
 
   function handleChange(inputIdentifier, newValue) {
     setUserInput((prevUserInput) => {
       return {
         ...prevUserInput,
-        [inputIdentifier]: newValue,
-      };
-    });
+        [inputIdentifier]: +newValue,
+      }
+    })
   }
 
   return (
-    <>
+    <StrictMode>
       <Header />
       <UserInput userInput={userInput} onChange={handleChange} />
       <Results input={userInput} />
-    </>
-  );
+    </StrictMode>
+  )
 }
 
-export default App;
+export default App
