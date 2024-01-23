@@ -7,3 +7,5 @@ const rootReducer = combineReducers({
   customer: customerReducer,
 })
 const store = createStore(rootReducer)
+
+export default store
