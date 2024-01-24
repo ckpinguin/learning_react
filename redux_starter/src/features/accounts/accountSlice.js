@@ -56,6 +56,8 @@ export function deposit(amount, currency) {
   if (currency === "USD") return { type: "account/deposit", payload: amount }
 
   // Using thunk for async side-effects
+  // Never use Redux for remote state sync normally, but
+  // this is a small, single datapoint, which is OK
   return async function (dispatch, getState) {
     dispatch({ type: "account/convertingCurrency" })
     // API call
