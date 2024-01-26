@@ -7,7 +7,7 @@ export default function Player() {
 
   function handleClick() {
     setEnteredPlayerName(playerName.current.value)
-    setSubmitted(true)
+    playerName.current.value = "" // don't normally do this! (directly manipulating DOM)
   }
 
   return (
