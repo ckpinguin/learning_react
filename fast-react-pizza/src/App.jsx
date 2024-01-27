@@ -1,9 +1,13 @@
+import { useState } from "react"
+
 function App() {
-  // const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hello Vite!</h1>
+      <div>
+        <h1>Hello vite!</h1>
+      </div>
     </>
   )
 }
