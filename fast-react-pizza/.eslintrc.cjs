@@ -20,9 +20,9 @@ module.exports = {
       "warn",
       {
         vars: "all",
-        args: "after-used",
         ignoreRestSiblings: true,
       },
     ],
+    "react/prop-types": "off",
   },
 }
