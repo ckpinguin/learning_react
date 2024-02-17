@@ -24,5 +24,9 @@ module.exports = {
       },
     ],
     "react/prop-types": "off",
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowExportNames: ["meta", "links", "headers", "loader", "action"] },
+    ],
   },
 }
