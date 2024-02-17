@@ -10,7 +10,7 @@ import AppLayout from "./ui/AppLayout"
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
-    errorElement: <Error />,
+    errorElement: <Error />, // generic error boundary
     children: [
       {
         path: "/",
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: menuLoader,
+        errorElement: <Error />, // specific error boundary (inside layout)
       },
       { path: "/cart", element: <Cart /> },
       { path: "/order/new", element: <CreateOrder /> },
