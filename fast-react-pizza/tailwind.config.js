@@ -2,7 +2,15 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: "Roboto Mono, monospace",
+    },
+
+    extend: {
+      colors: {
+        pizza: "#f8e9d6",
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/typography"),
