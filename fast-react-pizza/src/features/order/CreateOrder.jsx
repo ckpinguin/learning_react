@@ -1,4 +1,4 @@
-import { Form, redirect } from "react-router-dom"
+import { Form, redirect, useNavigation, useActionData } from "react-router-dom"
 import { useState } from "react"
 import { createOrder } from "../../services/apiRestaurant"
 
@@ -33,6 +33,10 @@ const fakeCart = [
 ]
 
 function CreateOrder() {
+  const navigation = useNavigation()
+  const isSubmitting = navigation.state === "submitting"
+  const formErrors = useActionData()
+
   const [withPriority, setWithPriority] = useState(false)
   const cart = fakeCart
 
@@ -53,6 +57,7 @@ function CreateOrder() {
           <div>
             <input type="tel" name="phone" required />
           </div>
+          {formErrors?.phone && <p>{formErrors.phone}</p>}
         </div>
 
         <div>
@@ -75,7 +80,9 @@ function CreateOrder() {
 
         <div>
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-          <button>Order now</button>
+          <button disabled={isSubmitting}>
+            {isSubmitting ? "Placing order..." : "Order now"}
+          </button>
         </div>
       </Form>
     </div>
@@ -91,6 +98,14 @@ export async function action({ request }) {
     priority: data.priority === "on",
   }
   console.log("Order", order)
+  const errors = {}
+  if (!isValidPhone(data.phone)) {
+    errors.phone =
+      "Please enter a valid phone number, we might need it to contact you."
+  }
+  if (Object.keys(errors).length > 0) return errors
+
+  // If all is good, we create the order and redirect to the order page
   const newOrder = await createOrder(order)
   // newOrder id comes already from the server
   return redirect(`/order/${newOrder.id}`)
