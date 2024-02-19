@@ -8,12 +8,14 @@ export default function AppLayout() {
   // Loading indicator is active for all routes when defined here
   const isLoading = navigation.state === "loading"
   return (
-    <div className="layout">
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
-      <main>
-        <Outlet />
-      </main>
+      <div className="overflow-scroll">
+        <main className="mx-auto max-w-3xl overflow-scroll pb-2">
+          <Outlet />
+        </main>
+      </div>
       <CartOverview />
     </div>
   )
