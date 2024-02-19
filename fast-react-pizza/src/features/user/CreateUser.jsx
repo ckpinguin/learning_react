@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react"
 
 function CreateUser() {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("")
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
   }
 
   return (
@@ -18,13 +18,13 @@ function CreateUser() {
         onChange={(e) => setUsername(e.target.value)}
       />
 
-      {username !== '' && (
+      {username !== "" && (
         <div>
           <button>Start ordering</button>
         </div>
       )}
     </form>
-  );
+  )
 }
 
-export default CreateUser;
+export default CreateUser

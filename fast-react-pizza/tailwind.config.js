@@ -4,5 +4,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
-};
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/container-queries"),
+  ],
+  darkMode: "class",
+}
