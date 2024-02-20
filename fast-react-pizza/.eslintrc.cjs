@@ -12,10 +12,6 @@ module.exports = {
   settings: { react: { version: "18.2" } },
   plugins: ["react-refresh"],
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
     "no-unused-vars": [
       "warn",
       {
@@ -26,7 +22,11 @@ module.exports = {
     "react/prop-types": "off",
     "react-refresh/only-export-components": [
       "warn",
-      { allowExportNames: ["meta", "links", "headers", "loader", "action"] },
+      {
+        allowExportNames: ["meta", "links", "headers", "loader", "action"],
+        allowConstantExport: true,
+      },
     ],
+    "no-console": "warn",
   },
 }

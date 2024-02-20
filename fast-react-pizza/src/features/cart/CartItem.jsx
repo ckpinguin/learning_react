@@ -7,7 +7,6 @@ import { getCurrentQuantityById } from "./cartSlice"
 function CartItem({ item }) {
   const { pizzaId, name, quantity, totalPrice } = item
   const currentQuantity = useSelector(getCurrentQuantityById(pizzaId))
-  console.log(currentQuantity)
 
   return (
     <li className="py-3 sm:flex sm:items-center sm:justify-between">

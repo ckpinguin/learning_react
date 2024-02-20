@@ -2,8 +2,11 @@ import { Form, redirect, useNavigation, useActionData } from "react-router-dom"
 import { createOrder } from "../../services/apiRestaurant"
 import Button from "../../ui/Button"
 import { useSelector } from "react-redux"
-import { getCart } from "../cart/cartSlice"
+import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice"
 import EmptyCart from "../cart/EmptyCart"
+import store from "../../store"
+import { formatCurrency } from "../../utils/helpers"
+import { useState } from "react"
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -12,13 +15,19 @@ const isValidPhone = (str) =>
   )
 
 function CreateOrder() {
+  const [withPriority, setWithPriority] = useState(false)
   const username = useSelector((state) => state.user.username)
   const navigation = useNavigation()
   const isSubmitting = navigation.state === "submitting"
   const formErrors = useActionData()
 
   const cart = useSelector(getCart)
-  if (!cart.length) return <EmptyCart />
+  const totalCartPrice = useSelector(getTotalCartPrice)
+  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0
+  const totalPrice = totalCartPrice + priorityPrice
+
+  if (!cart.length) return
+  ;<EmptyCart />
   return (
     <div className="px-4 py-6">
       <h2 className="mb-8 text-xl font-semibold">
@@ -69,6 +78,8 @@ function CreateOrder() {
             className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
             name="priority"
             id="priority"
+            value={withPriority}
+            onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label className="font-medium" htmlFor="priority">
             Want to yo give your order priority?
@@ -77,10 +88,12 @@ function CreateOrder() {
 
         <div>
           {/* We add the cart as a hidden input because we are not able to get it
-          from redux in the action below */}
+          from redux in the action below (hooks like „dispatch“ not available outside the component) */}
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
           <Button type="primary" disabled={isSubmitting}>
-            {isSubmitting ? "Placing order..." : "Order now"}
+            {isSubmitting
+              ? "Placing order..."
+              : `Order now for ${formatCurrency(totalPrice)}`}
           </Button>
         </div>
       </Form>
@@ -94,9 +107,8 @@ export async function action({ request }) {
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    priority: data.priority === "on",
+    priority: data.priority === "true",
   }
-  console.log("Order", order)
   const errors = {}
   if (!isValidPhone(data.phone)) {
     errors.phone =
@@ -107,6 +119,10 @@ export async function action({ request }) {
   // If all is good, we create the order and redirect to the order page
   const newOrder = await createOrder(order)
   // newOrder id comes already from the server
+
+  // This is a hack using the store directly to clear the cart after the order is placed, don't use this too often. It's better to dispatch an action from the component.
+  store.dispatch(clearCart())
+
   return redirect(`/order/${newOrder.id}`)
 }
 
