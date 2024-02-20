@@ -24,7 +24,7 @@ async function fetchAddress() {
 } */
 
 const initialState = {
-  username: "Joe",
+  username: "",
 }
 
 const userSlice = createSlice({
