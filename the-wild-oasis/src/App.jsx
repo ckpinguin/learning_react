@@ -8,10 +8,21 @@ import Settings from "./pages/Settings"
 import Login from "./pages/Login"
 import PageNotFound from "./pages/PageNotFound"
 import AppLayout from "./ui/AppLayout"
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      //staleTime: 1000 * 60,
+      staleTime: 0,
+    },
+  },
+})
 export default function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
+      {import.meta.env.DEV && <ReactQueryDevtools />}
       <GlobalStyles />
       <BrowserRouter>
         <Routes>
@@ -27,6 +38,6 @@ export default function App() {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </QueryClientProvider>
   )
 }
