@@ -1,6 +1,7 @@
-import toast from "react-hot-toast"
-import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { useForm } from "react-hook-form"
+
+import { useCreateCabin } from "./useCreateCabin"
+import { useEditCabin } from "./useEditCabin"
 
 import Input from "../../ui/Input"
 import Form from "../../ui/Form"
@@ -8,9 +9,6 @@ import Button from "../../ui/Button"
 import FileInput from "../../ui/FileInput"
 import Textarea from "../../ui/Textarea"
 import FormRow from "../../ui/FormRow"
-
-import { useCreateCabin } from "./useCreateCabin"
-import { useEditCabin } from "./useEditCabin"
 
 function CreateCabinForm({ cabinToEdit = {} }) {
   const { isCreating, createCabin } = useCreateCabin()
@@ -33,7 +31,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
         { newCabinData: { ...data, image }, id: editId },
         {
           onSuccess: (data) => {
-            reset(getValues())
+            reset()
           },
         }
       )
@@ -42,7 +40,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
         { ...data, image: image },
         {
           onSuccess: (data) => {
-            reset(getValues())
+            reset()
           },
         }
       )
