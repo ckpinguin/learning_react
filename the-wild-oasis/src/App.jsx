@@ -54,7 +54,7 @@ export default function App() {
             fontSize: "1rem",
             maxWidth: "500px",
             padding: "16px 24px",
-            backgroundColor: "var(--cololr-grey-0)",
+            backgroundColor: "var(--color-grey-0)",
             color: "var(--color-grey-800)",
           },
         }}

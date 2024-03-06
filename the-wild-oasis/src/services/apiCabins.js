@@ -57,10 +57,12 @@ export async function createEditCabin(cabin, id) {
 }
 
 export async function deleteCabin(id) {
-  const { error } = await supabase.from("cabins").delete().match({ id })
+  const { data, error } = await supabase.from("cabins").delete().match({ id })
 
   if (error) {
     console.error(error)
     throw new Error("Cabin could not be deleted")
   }
+
+  return data
 }
