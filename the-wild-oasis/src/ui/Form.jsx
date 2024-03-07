@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled, { css } from "styled-components"
 
 const Form = styled.form`
   ${(props) =>
@@ -20,6 +20,10 @@ const Form = styled.form`
     
   overflow: hidden;
   font-size: 1.4rem;
-`;
+`
 
-export default Form;
+Form.defaultProps = {
+  type: "regular",
+}
+
+export default Form

@@ -1,12 +1,6 @@
 import styled from "styled-components"
 import { HiXMark } from "react-icons/hi2"
-import {
-  cloneElement,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react"
+import { useEffect } from "react"
 import { createPortal } from "react-dom"
 
 const StyledModal = styled.div`
@@ -58,54 +52,33 @@ const Button = styled.button`
   }
 `
 
-const ModalContext = createContext()
-
-function Modal({ children }) {
-  const [openName, setOpenName] = useState("")
-
-  const close = () => setOpenName("")
-  const open = setOpenName
-
-  return (
-    <ModalContext.Provider value={{ openName, close, open }}>
-      {children}
-    </ModalContext.Provider>
-  )
-}
-
-function Open({ children, opens: opensWindowName }) {
-  const { open } = useContext(ModalContext)
-
-  return cloneElement(children, { onClick: () => open(opensWindowName) })
-}
-
-function Window({ children, name }) {
-  const { openName, close } = useContext(ModalContext)
-
-  if (name !== openName) return null
-
+function Modal({ children, onClose }) {
   useEffect(() => {
-    const closeOnEsc = (e) => {
+    const close = (e) => {
       if (e.keyCode === 27) {
-        close()
+        onClose()
       }
     }
-    window.addEventListener("keydown", closeOnEsc)
-    return () => window.removeEventListener("keydown", closeOnEsc)
+    window.addEventListener("keydown", close)
+    return () => window.removeEventListener("keydown", close)
   }, [])
 
   return createPortal(
     <Overlay>
       <StyledModal>
-        <Button onClick={close}>
+        <Button onClick={onClose}>
           <HiXMark />
         </Button>
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
+        <div>{children}</div>
       </StyledModal>
     </Overlay>,
     document.body
   )
 }
+
+function Open() {}
+
+function Window() {}
 
 Modal.Open = Open
 Modal.Window = Window
