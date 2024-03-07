@@ -5,9 +5,12 @@ import {
   createContext,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react"
 import { createPortal } from "react-dom"
+import { useOutsideClick } from "../hooks/useOutsideClick"
+import { useEscapePress } from "../hooks/useEscapePress"
 
 const StyledModal = styled.div`
   position: fixed;
@@ -81,22 +84,14 @@ function Open({ children, opens: opensWindowName }) {
 
 function Window({ children, name }) {
   const { openName, close } = useContext(ModalContext)
+  const ref = useOutsideClick(close)
+  useEscapePress(close)
 
   if (name !== openName) return null
 
-  useEffect(() => {
-    const closeOnEsc = (e) => {
-      if (e.keyCode === 27) {
-        close()
-      }
-    }
-    window.addEventListener("keydown", closeOnEsc)
-    return () => window.removeEventListener("keydown", closeOnEsc)
-  }, [])
-
   return createPortal(
     <Overlay>
-      <StyledModal>
+      <StyledModal ref={ref}>
         <Button onClick={close}>
           <HiXMark />
         </Button>
