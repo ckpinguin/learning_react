@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { HiTrash, HiPencil, HiPlusCircle } from "react-icons/hi"
-import { useState } from "react"
 import { formatCurrency } from "../../utils/helpers"
 import CreateCabinForm from "./CreateCabinForm"
 import { useDeleteCabin } from "./useDeleteCabin"
 import { useCreateCabin } from "./useCreateCabin"
+import Modal from "../../ui/Modal"
+import ConfirmDelete from "../../ui/ConfirmDelete"
 
 const TableRow = styled.div`
   display: grid;
@@ -46,7 +47,6 @@ const Discount = styled.div`
 `
 
 export default function CabinRow({ cabin }) {
-  const [showForm, setShowForm] = useState(false)
   const { isDeleting, deleteCabin } = useDeleteCabin()
   const { isCreating, createCabin } = useCreateCabin()
 
@@ -85,15 +85,30 @@ export default function CabinRow({ cabin }) {
           <button onClick={handleDuplicate} disabled={isCreating}>
             <HiPlusCircle />
           </button>
-          <button onClick={() => setShowForm(!showForm)}>
-            <HiPencil />
-          </button>
-          <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
-            <HiTrash />
-          </button>
+          <Modal>
+            <Modal.Open opens="edit">
+              <button>
+                <HiPencil />
+              </button>
+            </Modal.Open>
+            <Modal.Window name="edit">
+              <CreateCabinForm cabinToEdit={cabin} />
+            </Modal.Window>
+            <Modal.Open>
+              <button>
+                <HiTrash />
+              </button>
+            </Modal.Open>
+            <Modal.Window>
+              <ConfirmDelete
+                resourceName="cabins"
+                disabled={isDeleting}
+                onConfirm={() => deleteCabin(cabinId)}
+              />
+            </Modal.Window>
+          </Modal>
         </div>
       </TableRow>
-      {showForm && <CreateCabinForm cabinToEdit={cabin} />}
     </div>
   )
 }
