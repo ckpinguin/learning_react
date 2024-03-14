@@ -80,8 +80,10 @@ function Header({ children }) {
   )
 }
 
-function Body({ children }) {
-  return <StyledBody role="rowgroup">{children}</StyledBody>
+// One today still useful example of the render prop:
+function Body({ data, render }) {
+  if (data.length === 0) return <Empty>No data to show at the moment</Empty>
+  return <StyledBody>{data.map(render)}</StyledBody>
 }
 
 function Row({ children }) {
