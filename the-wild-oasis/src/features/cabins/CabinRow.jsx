@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { HiTrash, HiPencil, HiPlusCircle } from "react-icons/hi"
+import { HiTrash, HiPencil } from "react-icons/hi"
 import { formatCurrency } from "../../utils/helpers"
 import CreateCabinForm from "./CreateCabinForm"
 import { useDeleteCabin } from "./useDeleteCabin"
