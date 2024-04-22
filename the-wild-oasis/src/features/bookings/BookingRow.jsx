@@ -1,18 +1,18 @@
-import styled from "styled-components";
-import { format, isToday } from "date-fns";
+import styled from "styled-components"
+import { format, isToday } from "date-fns"
 
-import Tag from "../../ui/Tag";
-import Table from "../../ui/Table";
+import Tag from "../../ui/Tag"
+import Table from "../../ui/Table"
 
-import { formatCurrency } from "../../utils/helpers";
-import { formatDistanceFromNow } from "../../utils/helpers";
+import { formatCurrency } from "../../utils/helpers"
+import { formatDistanceFromNow } from "../../utils/helpers"
 
 const Cabin = styled.div`
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
-`;
+`
 
 const Stacked = styled.div`
   display: flex;
@@ -27,13 +27,14 @@ const Stacked = styled.div`
     color: var(--color-grey-500);
     font-size: 1.2rem;
   }
-`;
+`
 
 const Amount = styled.div`
   font-family: "Sono";
   font-weight: 500;
-`;
+`
 
+// Example for destructuring already in the param part of the function def
 function BookingRow({
   booking: {
     id: bookingId,
@@ -52,7 +53,7 @@ function BookingRow({
     unconfirmed: "blue",
     "checked-in": "green",
     "checked-out": "silver",
-  };
+  }
 
   return (
     <Table.Row>
@@ -80,7 +81,7 @@ function BookingRow({
 
       <Amount>{formatCurrency(totalPrice)}</Amount>
     </Table.Row>
-  );
+  )
 }
 
-export default BookingRow;
+export default BookingRow

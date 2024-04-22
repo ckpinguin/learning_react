@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 const StyledPagination = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-`;
+`
 
 const P = styled.p`
   font-size: 1.4rem;
@@ -14,12 +14,12 @@ const P = styled.p`
   & span {
     font-weight: 600;
   }
-`;
+`
 
 const Buttons = styled.div`
   display: flex;
   gap: 0.6rem;
-`;
+`
 
 const PaginationButton = styled.button`
   background-color: ${(props) =>
@@ -54,4 +54,14 @@ const PaginationButton = styled.button`
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);
   }
-`;
+`
+
+export default function Pagination() {
+  return (
+    <StyledPagination>
+      <p>
+        Showing <span>1</span> to <span>10</span> of <span>23</span> results
+      </p>
+    </StyledPagination>
+  )
+}
