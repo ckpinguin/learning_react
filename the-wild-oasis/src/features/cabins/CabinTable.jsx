@@ -4,6 +4,7 @@ import { useCabins } from "./useCabins"
 import Table from "../../ui/Table"
 import Menus from "../../ui/Menus"
 import { useSearchParams } from "react-router-dom"
+import Empty from "../../ui/Empty"
 
 export default function CabinTable() {
   const { isLoading, cabins, error } = useCabins()
@@ -34,6 +35,8 @@ export default function CabinTable() {
       return (a[field] - b[field]) * modifier
     }
   })
+
+  if (!cabins.length) return <Empty resourceName="cabins" />
 
   return (
     <Menus>
