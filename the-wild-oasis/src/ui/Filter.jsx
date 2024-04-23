@@ -35,13 +35,16 @@ const FilterButton = styled.button`
   }
 `
 
-export default function Filter({ filterField, options }) {
+export default function Filter({ filterField, options, searchParamsToReset }) {
   const [searchParams, setSearchParams] = useSearchParams()
   const currentFilter = searchParams.get(filterField) || options.at(0).value
 
   function handleClick(value) {
     // Use set at first, because there is yet no state to update with setSearchParams
     searchParams.set(filterField, value)
+    searchParamsToReset?.map((param) =>
+      searchParams.set(param.name, param.value)
+    )
     setSearchParams(searchParams)
   }
 

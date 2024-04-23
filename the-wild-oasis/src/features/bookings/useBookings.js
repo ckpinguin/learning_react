@@ -18,7 +18,6 @@ export function useBookings() {
   const sortBy = { field, direction }
 
   // PAGINATION
-  const pagination = searchParams.get("pagination")
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"))
 
   const {

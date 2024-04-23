@@ -17,7 +17,7 @@ export async function getBooking(id) {
   return data
 }
 
-export async function getBookings({ filter, sortBy }) {
+export async function getBookings({ filter, sortBy, page }) {
   let query = supabase
     .from("bookings")
     .select(
