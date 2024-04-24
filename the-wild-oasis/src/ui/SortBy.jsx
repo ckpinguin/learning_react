@@ -9,6 +9,7 @@ export default function SortyBy({ options }) {
     searchParams.set("sortBy", e.target.value)
     setSearchParams(searchParams)
   }
+  3
 
   return (
     <Select
