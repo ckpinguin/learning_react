@@ -1,4 +1,11 @@
 import styled from "styled-components"
+import {
+  HiArrowDownOnSquare,
+  HiArrowUpOnSquare,
+  HiEye,
+  HiTrash,
+} from "react-icons/hi2"
+
 import { format, isToday } from "date-fns"
 
 import Tag from "../../ui/Tag"
@@ -7,12 +14,6 @@ import Menus from "../../ui/Menus"
 
 import { formatCurrency } from "../../utils/helpers"
 import { formatDistanceFromNow } from "../../utils/helpers"
-import {
-  HiArrowDownOnSquare,
-  HiArrowUpOnSquare,
-  HiEye,
-  HiTrash,
-} from "react-icons/hi2"
 import { useNavigate } from "react-router-dom"
 import { useCheckout } from "../check-in-out/useCheckout"
 import Modal from "../../ui/Modal"

@@ -41,11 +41,6 @@ function BookingDetail() {
     "checked-out": "silver",
   }
 
-  function confirmDeleteHandler(bookingId) {
-    deleteBooking(bookingId)
-    navigate("/")
-  }
-
   return (
     <>
       <Row type="horizontal">
@@ -81,7 +76,11 @@ function BookingDetail() {
             <ConfirmDelete
               resourceName="booking"
               disabled={isDeleting}
-              onConfirm={() => confirmDeleteHandler(bookingId)}
+              onConfirm={() =>
+                deleteBooking(bookingId, {
+                  onSuccess: () => navigate("/bookings"),
+                })
+              }
             />
           </Modal.Window>
         </Modal>
