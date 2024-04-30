@@ -3,19 +3,22 @@ import Button from "../../ui/Button"
 import Form from "../../ui/Form"
 import FormRow from "../../ui/FormRow"
 import Input from "../../ui/Input"
-import { FunctionsFetchError } from "@supabase/supabase-js"
+import { useSignup } from "./useSignup"
 
 // Email regex: /\S+@\S+\.\S+/
 
 function SignupForm() {
+  const { signup, isLoading } = useSignup()
   const {
     register,
     handleSubmit,
     getValues,
+    reset,
     formState: { errors },
   } = useForm()
 
-  function onSubmit(data) {
+  function onSubmit({ fullName, email, password }) {
+    signup({ fullName, email, password }, { onSettled: reset })
     console.log("onSubmit: ", data)
   }
   function onError(errors) {
@@ -28,6 +31,7 @@ function SignupForm() {
         <Input
           type="text"
           id="fullName"
+          disabled={isLoading}
           {...register("fullName", { required: "Name is required" })}
         />
       </FormRow>
@@ -36,6 +40,7 @@ function SignupForm() {
         <Input
           type="email"
           id="email"
+          disabled={isLoading}
           {...register("email", {
             required: "Email is required",
             pattern: {
@@ -52,6 +57,7 @@ function SignupForm() {
         <Input
           type="password"
           id="password"
+          disabled={isLoading}
           {...register("password", {
             required: "Password is required",
             minLength: {
@@ -66,6 +72,7 @@ function SignupForm() {
         <Input
           type="password"
           id="passwordConfirm"
+          disabled={isLoading}
           {...register("passwordConfirm", {
             required: "Password confirmation is required",
             validate: (value) =>
@@ -76,7 +83,7 @@ function SignupForm() {
 
       <FormRow>
         {/* type is an HTML attribute! */}
-        <Button variation="secondary" type="reset">
+        <Button disabled={isLoading} variation="secondary" type="reset">
           Cancel
         </Button>
         <Button>Create new user</Button>
