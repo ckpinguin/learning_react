@@ -12,6 +12,11 @@ import ButtonText from "../../ui/ButtonText"
 import { useMoveBack } from "../../hooks/useMoveBack"
 import { useBooking } from "./useBooking"
 import { useNavigate } from "react-router-dom"
+import { useCheckout } from "../check-in-out/useCheckout"
+import { HiArrowUpOnSquare } from "react-icons/hi2"
+import Modal from "../../ui/Modal"
+import ConfirmDelete from "../../ui/ConfirmDelete"
+import { useDeleteBooking } from "./useDeleteBooking"
 
 const HeadingGroup = styled.div`
   display: flex;
@@ -21,6 +26,8 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
   const { booking, isLoading } = useBooking()
+  const { deleteBooking, isDeleting } = useDeleteBooking()
+  const { checkout, isCheckingOut } = useCheckout()
   const moveBack = useMoveBack()
   const navigate = useNavigate()
 
@@ -34,6 +41,11 @@ function BookingDetail() {
     "checked-out": "silver",
   }
 
+  function confirmDeleteHandler(bookingId) {
+    deleteBooking(bookingId)
+    navigate("/")
+  }
+
   return (
     <>
       <Row type="horizontal">
@@ -45,15 +57,34 @@ function BookingDetail() {
       </Row>
 
       <BookingDataBox booking={booking} />
+
       <ButtonGroup>
         {status === "unconfirmed" && (
           <Button onClick={() => navigate(`checkin/{bookingId}`)}>
             Check in
           </Button>
         )}
-      </ButtonGroup>
+        {status === "checked-in" && (
+          <Button
+            icon={<HiArrowUpOnSquare />}
+            onClick={() => checkout(bookingId)}
+            disabled={isCheckingOut}>
+            Check out
+          </Button>
+        )}
+        <Modal>
+          <Modal.Open opens="delete">
+            <Button variation="danger">Delete</Button>
+          </Modal.Open>
 
-      <ButtonGroup>
+          <Modal.Window name="delete">
+            <ConfirmDelete
+              resourceName="booking"
+              disabled={isDeleting}
+              onConfirm={() => confirmDeleteHandler(bookingId)}
+            />
+          </Modal.Window>
+        </Modal>
         <Button variation="secondary" onClick={moveBack}>
           Back
         </Button>
