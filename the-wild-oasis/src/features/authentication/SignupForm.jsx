@@ -1,27 +1,77 @@
-import Button from "../../ui/Button";
-import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
-import Input from "../../ui/Input";
+import { useForm } from "react-hook-form"
+import Button from "../../ui/Button"
+import Form from "../../ui/Form"
+import FormRow from "../../ui/FormRow"
+import Input from "../../ui/Input"
+import { FunctionsFetchError } from "@supabase/supabase-js"
 
 // Email regex: /\S+@\S+\.\S+/
 
 function SignupForm() {
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm()
+
+  function onSubmit(data) {
+    console.log("onSubmit: ", data)
+  }
+  function onError(errors) {
+    console.log("onError: ", errors)
+  }
+
   return (
-    <Form>
-      <FormRow label="Full name" error={""}>
-        <Input type="text" id="fullName" />
+    <Form noValidate onSubmit={handleSubmit(onSubmit, onError)}>
+      <FormRow label="Full name" error={errors?.fullName?.message}>
+        <Input
+          type="text"
+          id="fullName"
+          {...register("fullName", { required: "Name is required" })}
+        />
       </FormRow>
 
-      <FormRow label="Email address" error={""}>
-        <Input type="email" id="email" />
+      <FormRow label="Email address" error={errors?.email?.message}>
+        <Input
+          type="email"
+          id="email"
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: "Need a valid email address",
+            },
+          })}
+        />
       </FormRow>
 
-      <FormRow label="Password (min 8 characters)" error={""}>
-        <Input type="password" id="password" />
+      <FormRow
+        label="Password (min 8 characters)"
+        error={errors?.password?.message}>
+        <Input
+          type="password"
+          id="password"
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters",
+            },
+          })}
+        />
       </FormRow>
 
-      <FormRow label="Repeat password" error={""}>
-        <Input type="password" id="passwordConfirm" />
+      <FormRow label="Repeat password" error={errors?.passwordConfirm?.message}>
+        <Input
+          type="password"
+          id="passwordConfirm"
+          {...register("passwordConfirm", {
+            required: "Password confirmation is required",
+            validate: (value) =>
+              value === getValues().password || "Passwords do not match",
+          })}
+        />
       </FormRow>
 
       <FormRow>
@@ -32,7 +82,7 @@ function SignupForm() {
         <Button>Create new user</Button>
       </FormRow>
     </Form>
-  );
+  )
 }
 
-export default SignupForm;
+export default SignupForm
