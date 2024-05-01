@@ -21,7 +21,7 @@ export default function ProtectedRoute({ children }) {
   // (needs effect, navigate cannot be directly called at comp. level)
   useEffect(
     function () {
-      if (!isAuthenticated && !isAuthenticated && fetchStatus !== "fetching") {
+      if (!isAuthenticated && !isLoading && fetchStatus !== "fetching") {
         console.log("not authenticated, navigate to /login")
         navigate("/login")
       }
