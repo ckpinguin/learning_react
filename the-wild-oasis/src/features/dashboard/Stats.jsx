@@ -17,7 +17,7 @@ export default function Stats({
   const numBookings = bookings?.length
 
   // 2.
-  const sales = bookings.reduce((acc, cur) => acc + cur.totalPrice, 0)
+  const sales = bookings?.reduce((acc, cur) => acc + cur.totalPrice, 0)
 
   //3.
   const checkins = confirmedStays?.length
