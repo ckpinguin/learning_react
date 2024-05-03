@@ -1,6 +1,15 @@
 import Link from "next/link"
 import classes from "./page.module.css"
+import { getMeals } from "@/lib/meals"
+import MealsGrid from "@/components/meals/meals-grid"
+import { Suspense } from "react"
 
+async function Meals() {
+  const meals = await getMeals()
+
+  return <MealsGrid meals={meals} />
+}
+// Next-js server components can even be async!
 export default function MealsPage() {
   return (
     <>
@@ -16,18 +25,11 @@ export default function MealsPage() {
           <Link href="/meals/share">Share your Favorite Recipe</Link>
         </p>
       </header>
-
       <main className={classes.main}>
-        <h1>Meals Page</h1>
-        <p>
-          <Link href="/meals/abc">Meals Details</Link>
-        </p>
-        <p>
-          <Link href="/meals/share">Share Meals</Link>
-        </p>
-        <p>
-          <Link href="/community">Community Page</Link>
-        </p>
+        <Suspense
+          fallback={<p className={classes.loading}>Fetching meals...</p>}>
+          <Meals />
+        </Suspense>
       </main>
     </>
   )
