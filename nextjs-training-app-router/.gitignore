@@ -20,6 +20,9 @@
 .DS_Store
 *.pem
 
+# local sqlite db's (mostly for development purposes)
+*.db
+
 # debug
 npm-debug.log*
 yarn-debug.log*
