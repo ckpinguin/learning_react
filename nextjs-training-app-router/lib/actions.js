@@ -1,6 +1,14 @@
 "use server"
 
-export async function shareMeal(formData) {
+import { redirect } from "next/navigation"
+
+import { saveMeal } from "./meals"
+
+function isInvalidText(text) {
+  return !text || text.trim() === ""
+}
+
+export async function shareMeal(prevState, formData) {
   // this creates a server action (function must be async)
   //"use server" // not necessary when in this separate actions.js filec
   const meal = {
@@ -11,5 +19,23 @@ export async function shareMeal(formData) {
     creator: formData.get("name"),
     creator_email: formData.get("email"),
   }
-  //console.log(meal)
+
+  if (
+    isInvalidText(meal.title) ||
+    isInvalidText(meal.summary) ||
+    isInvalidText(meal.instructions) ||
+    isInvalidText(meal.creator) ||
+    isInvalidText(meal.creator_email) ||
+    !meal.creator_email.includes("@") ||
+    !meal.image ||
+    meal.image.size === 0
+  ) {
+    return {
+      message:
+        "Invalid input. Please make sure all fields are filled and the email is valid.",
+    }
+  }
+
+  saveMeal(meal)
+  redirect("/meals")
 }
