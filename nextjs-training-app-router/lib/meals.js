@@ -30,10 +30,10 @@ export async function saveMeal(meal) {
   const extension = meal.image.name.split(".").pop()
   const fileName = `${meal.slug}-${Math.random()}.${extension}`
 
-  const stream = fs.createWriteStream(`public/images/${fileName}`)
+  //const stream = fs.createWriteStream(`public/images/${fileName}`)
   const bufferedImage = await meal.image.arrayBuffer()
 
-  s3.putObject({
+  await s3.putObject({
     Bucket: "nextjs-food-app-example",
     Key: fileName,
     Body: Buffer.from(bufferedImage),
