@@ -12,12 +12,16 @@ export default function ProjectsSidebar({
         Your Projects
       </h2>
       <div>
-        <Button onClick={onStartAddProject}>Add Project</Button>
+        <Button
+          disabled={selectedProjectId === null}
+          onClick={onStartAddProject}>
+          Add Project
+        </Button>
       </div>
       <ul className="mt-8">
         {projects.map((project) => {
           let cssClasses =
-            "w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover:text-stone-200 hover:bg-stone-800"
+            "disabled:bg-stone-800 disabled:text-stone-600 disabled:pointer-events-none w-full text-left px-2 py-1 rounded-sm my-1 text-stone-400 hover:text-stone-200 hover:bg-stone-800"
           if (selectedProjectId === project.id) {
             cssClasses += " bg-stone-800 text-stone-200"
           } else {
@@ -27,6 +31,7 @@ export default function ProjectsSidebar({
           return (
             <li key={project.id}>
               <button
+                disabled={selectedProjectId === null}
                 onClick={() => onSelectProject(project.id)}
                 className={cssClasses}>
                 {project.title}

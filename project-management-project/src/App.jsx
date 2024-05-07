@@ -10,6 +10,34 @@ function App() {
     projects: [],
   })
 
+  function handleAddTask(text) {
+    setProjectState((prevState) => {
+      return {
+        ...prevState,
+        projects: prevState.projects.map((project) => {
+          if (project.id === prevState.selectedProjectId) {
+            project.tasks = project.tasks.concat({ text, id: Math.random() })
+          }
+          return project
+        }),
+      }
+    })
+  }
+
+  function handleDeleteTask(id) {
+    setProjectState((prevState) => {
+      return {
+        ...prevState,
+        projects: prevState.projects.map((project) => {
+          if (project.id === prevState.selectedProjectId) {
+            project.tasks = project.tasks.filter((task) => task.id !== id)
+          }
+          return project
+        }),
+      }
+    })
+  }
+
   function handleSelectProject(id) {
     setProjectState((prevState) => {
       return {
@@ -24,6 +52,7 @@ function App() {
       const newProject = {
         ...projectData,
         id: Math.random(),
+        tasks: [],
       }
       return {
         ...prevState,
@@ -65,7 +94,12 @@ function App() {
     (project) => project.id === projectState.selectedProjectId
   )
   let content = (
-    <SelectedProject project={selectedProject} onDelete={handleDeleteProject} />
+    <SelectedProject
+      project={selectedProject}
+      onDelete={handleDeleteProject}
+      onAddTask={handleAddTask}
+      onDeleteTask={handleDeleteTask}
+    />
   )
 
   if (projectState.selectedProjectId === null) {
