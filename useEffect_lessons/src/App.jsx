@@ -7,12 +7,21 @@ import DeleteConfirmation from "./components/DeleteConfirmation.jsx"
 import logoImg from "./assets/logo.png"
 import { sortPlacesByDistance } from "./loc.js"
 
-function App() {
-  const modal = useRef()
-  const selectedPlace = useRef()
-  const [availablePlaces, setAvailablePlaces] = useState([])
-  const [pickedPlaces, setPickedPlaces] = useState([])
+// This is run outside of the component function, so it is only run once when the module is loaded (performance).
+const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || []
+const storedPlaces = storedIds.map((id) =>
+  AVAILABLE_PLACES.find((place) => place.id === id)
+)
 
+function App() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  // This ref is used instead of using state to store the selected place (no need to re-render the component)
+  const selectedPlace = useRef()
+
+  const [availablePlaces, setAvailablePlaces] = useState([])
+  const [pickedPlaces, setPickedPlaces] = useState(storedPlaces)
+
+  // If you want to run a side effect after the component has been rendered, you can use the useEffect hook.
   useEffect(() => {
     // Side effect
     navigator.geolocation.getCurrentPosition((position) => {
@@ -29,13 +38,22 @@ function App() {
     })
   }, [])
 
+  // Possibility to run use saved storage on reload (not recommended for production)
+  /*   useEffect(() => {
+    const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || []
+    const storedPlaces = storedIds.map((id) =>
+      AVAILABLE_PLACES.find((place) => place.id === id)
+    )
+    setPickedPlaces(storedPlaces)
+  }, [])
+ */
   function handleStartRemovePlace(id) {
-    modal.current.open()
+    setModalIsOpen(true)
     selectedPlace.current = id
   }
 
   function handleStopRemovePlace() {
-    modal.current.close()
+    setModalIsOpen(false)
   }
 
   function handleSelectPlace(id) {
@@ -47,6 +65,7 @@ function App() {
       return [place, ...prevPickedPlaces]
     })
 
+    // A side effect inside a handler is totally OK.
     const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || []
     if (storedIds.indexOf(id) === -1) {
       localStorage.setItem("selectedPlaces", JSON.stringify([id, ...storedIds]))
@@ -57,12 +76,18 @@ function App() {
     setPickedPlaces((prevPickedPlaces) =>
       prevPickedPlaces.filter((place) => place.id !== selectedPlace.current)
     )
-    modal.current.close()
+    setModalIsOpen(false)
+
+    const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || []
+    localStorage.setItem(
+      "selectedPlaces",
+      JSON.stringify(storedIds.filter((id) => id !== selectedPlace.current))
+    )
   }
 
   return (
     <>
-      <Modal ref={modal}>
+      <Modal open={modalIsOpen}>
         <DeleteConfirmation
           onCancel={handleStopRemovePlace}
           onConfirm={handleRemovePlace}
