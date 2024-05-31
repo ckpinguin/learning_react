@@ -1,0 +1,46 @@
+module.exports = {
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:cypress/recommended",
+  ],
+  ignorePatterns: ["dist", ".eslintrc.cjs", ".cy.js"],
+  parserOptions: { ecmaVersion: "latest", sourceType: "module" },
+  settings: { react: { version: "18.2" } },
+  plugins: ["react-refresh", "react", "react-hooks", "cypress"],
+  overrides: [
+    {
+      files: ["**/*.test.js"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
+  rules: {
+    "react/jsx-no-target-blank": "off",
+    "react-refresh/only-export-components": [
+      "warn",
+      { allowConstantExport: true },
+    ],
+    "react/prop-types": 2,
+    "no-unused-vars": "warn",
+    "react/jsx-no-leaked-render": 1,
+    "react/jsx-max-depth": [1, { max: 3 }],
+    "react/destructuring-assignment": 2,
+    "react/no-unstable-nested-components": 2,
+    "react/jsx-no-useless-fragment": 2,
+    "react/jsx-fragments": 2,
+    "react/no-children-prop": 2,
+    "react/no-array-index-key": 2,
+    "react/button-has-type": 1,
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": 1,
+    "react/display-name": 2,
+    "react/jsx-no-bind": 0,
+    "no-console": "warn",
+  },
+}
