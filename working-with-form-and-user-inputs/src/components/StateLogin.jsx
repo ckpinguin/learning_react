@@ -8,8 +8,10 @@ export default function Login() {
     password: "",
   })
 
-  const emailIsInvalid = !enteredValues.email.includes("@")
-  const passwordIsInvalid = enteredValues.password.trim().length < 6
+  const emailIsInvalid =
+    enteredValues.email !== "" && !enteredValues.email.includes("@")
+  const passwordIsInvalid =
+    enteredValues.password !== "" && enteredValues.password.trim().length < 6
 
   function handleSubmit(event) {
     event.preventDefault()
