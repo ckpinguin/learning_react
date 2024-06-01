@@ -61,6 +61,7 @@ export default function Login() {
           onChange={(event) => handleInputChange("email", event.target.value)}
           onBlur={() => handleInputBlur("email")}
           value={enteredValues.email}
+          error={emailIsInvalid && "Please enter a valid email."}
         />
         <Input
           label="Password"
@@ -72,6 +73,7 @@ export default function Login() {
           }
           onBlur={() => handleInputBlur("password")}
           value={enteredValues.password}
+          error={passwordIsInvalid && "Password must be at least 6 characters."}
         />
       </div>
 
