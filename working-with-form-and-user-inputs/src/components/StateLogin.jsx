@@ -8,6 +8,9 @@ export default function Login() {
     password: "",
   })
 
+  const emailIsInvalid = !enteredValues.email.includes("@")
+  const passwordIsInvalid = enteredValues.password.trim().length < 6
+
   function handleSubmit(event) {
     event.preventDefault()
     console.log("Login form submitted")
@@ -41,6 +44,9 @@ export default function Login() {
             type="email"
             name="email"
           />
+          <div className="control-error">
+            {emailIsInvalid && "Please enter a valid email addresse."}
+          </div>
         </div>
 
         <div className="control no-margin">
@@ -54,6 +60,10 @@ export default function Login() {
             }
             name="password"
           />
+          <div className="control-error">
+            {passwordIsInvalid &&
+              "Password must be at least 6 characters long."}
+          </div>
         </div>
       </div>
 

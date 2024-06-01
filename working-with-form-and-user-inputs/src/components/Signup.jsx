@@ -12,6 +12,9 @@ export default function Signup() {
     // entries() is used for single value inputs, it gets combined with the getAll() from above
     const data = Object.fromEntries(formData.entries(), acquisitionChannel)
     console.log(data)
+
+    // Reset the form as a whole, if needed
+    //event.target.reset()
   }
 
   return (

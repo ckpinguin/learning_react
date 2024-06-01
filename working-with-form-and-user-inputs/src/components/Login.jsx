@@ -10,6 +10,10 @@ export default function Login() {
     const enteredEmail = email.current.value
     const enteredPassword = password.current.value
     console.log(enteredEmail, enteredPassword)
+    // NOT recommended to use this in production:
+    email.current.value = ""
+    // Better use this to clear the form as a whole:
+    event.target.reset()
   }
 
   return (
