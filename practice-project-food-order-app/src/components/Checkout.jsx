@@ -16,16 +16,17 @@ const requestConfig = {
 }
 
 export default function Checkout() {
-  const cartCtx = useContext(CartContext)
+  const { items, clearCart } = useContext(CartContext)
   const { progress, hideCheckout } = useContext(UserProgressContext)
   const {
     data,
     isLoading: isSending,
     error,
     sendRequest,
+    clearData,
   } = useHttp("http://localhost:3000/orders", requestConfig)
 
-  const cartTotal = cartCtx.items.reduce(
+  const cartTotal = items.reduce(
     (acc, cur) => acc + cur.quantity * cur.price,
     0
   )
@@ -34,6 +35,11 @@ export default function Checkout() {
     hideCheckout()
   }
 
+  function handleFinish() {
+    hideCheckout()
+    clearCart()
+    clearData()
+  }
   function handleSubmit(e) {
     e.preventDefault()
 
@@ -42,7 +48,7 @@ export default function Checkout() {
     const body = JSON.stringify({
       order: {
         customer: customerData,
-        items: cartCtx.items,
+        items: items,
       },
     })
     console.log(JSON.parse(body))
@@ -68,7 +74,7 @@ export default function Checkout() {
         <h2>Success!</h2>
         <p>Your order has been submitted successfully!</p>
         <p>Thank you for your purchase!</p>
-        <Button onClick={handleClose}>Okay</Button>
+        <Button onClick={handleFinish}>Okay</Button>
       </Modal>
     )
   }
