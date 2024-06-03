@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "customer": {
+      "name": "test",
+      "email": "ate@it.ch",
+      "street": "yaten",
+      "postal-code": "343",
+      "city": "aeae"
+    },
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 2
+      }
+    ],
+    "id": "28.781485201608838"
+  },
+  {
+    "customer": {
+      "name": "test",
+      "email": "ate@it.ch",
+      "street": "yaten",
+      "postal-code": "343",
+      "city": "aeae"
+    },
+    "items": [
+      {
+        "id": "m2",
+        "name": "Margherita Pizza",
+        "price": "12.99",
+        "description": "A classic pizza with fresh mozzarella, tomatoes, and basil on a thin and crispy crust.",
+        "image": "images/margherita-pizza.jpg",
+        "quantity": 2
+      }
+    ],
+    "id": "166.7982887824535"
+  }
+]

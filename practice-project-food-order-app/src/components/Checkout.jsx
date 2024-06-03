@@ -19,14 +19,35 @@ export default function Checkout() {
     hideCheckout()
   }
 
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    const formData = new FormData(e.target)
+    const customerData = Object.fromEntries(formData.entries())
+    const body = JSON.stringify({
+      order: {
+        customer: customerData,
+        items: cartCtx.items,
+      },
+    })
+    console.log(JSON.parse(body))
+    fetch("http://localhost:3000/orders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body,
+    })
+  }
+
   return (
     <Modal open={progress === "checkout"}>
       <h2>Checkout</h2>
       <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input
           label="Full Name"
-          id="full-name"
+          id="name"
           type="text"
           placeholder="Your Name"
           required
