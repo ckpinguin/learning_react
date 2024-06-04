@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div id="demo">
-      <div id="box" />
+      <motion.div id="box" animatef />
 
       <div id="inputs">
         <p>
