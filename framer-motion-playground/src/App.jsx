@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react"
+import { motion } from "framer-motion"
 
 function App() {
-  const [x, setX] = useState(0);
-  const [y, setY] = useState(0);
-  const [rotate, setRotate] = useState(0);
+  const [x, setX] = useState(0)
+  const [y, setY] = useState(0)
+  const [rotate, setRotate] = useState(0)
 
   return (
     <div id="demo">
@@ -38,7 +39,7 @@ function App() {
         </p>
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
