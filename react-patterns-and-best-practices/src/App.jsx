@@ -7,7 +7,7 @@ function App() {
       <section>
         <h2>Why work with us?</h2>
         <Accordion>
-          <AccordionItem title="We deliver on time">
+          <AccordionItem className="accordion-item" title="We deliver on time">
             <article>
               <p>
                 We deliver on time. We are a team of dedicated professionals who
@@ -16,7 +16,7 @@ function App() {
               <p>We pay on delay.</p>
             </article>
           </AccordionItem>
-          <AccordionItem title="We are experienced">
+          <AccordionItem className="accordion-item" title="We are experienced">
             <article>
               <p>
                 We deliver on time. We are a team of dedicated professionals who
